@@ -17,7 +17,7 @@
 
 
 <div class="flex items-center gap-2">
-  <img src="images/logo.webp" class="w-8">
+  <img src="Images/logo.webp" class="w-8">
   <span class="font-semibold">Hub Digital</span>
 </div>
 
@@ -145,15 +145,56 @@
 
 <!-- CTA -->
 
-<section class="py-20 px-6 text-center bg-gradient-to-r from-indigo-600 to-purple-600">
-  <h2 class="text-3xl md:text-4xl font-bold mb-6">
-    Empiece a crecer hoy mismo
-  </h2>
-  <a href="https://wa.me/573006170055?text=Hola%20quiero%20crecer"
-     class="bg-white text-black px-6 py-3 rounded-xl font-semibold">
-     Hablar ahora
-  </a>
+<section class="py-20 px-6 text-center relative overflow-hidden">
+
+  <!-- GRADIENTE ANIMADO -->
+  <div class="absolute inset-0 animate-gradient bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600"></div>
+
+  <!-- CAPA OSCURA (para mantener elegancia) -->
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <!-- CONTENIDO -->
+  <div class="relative z-10">
+
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+      Empiece a crecer hoy mismo
+    </h2>
+
+    <p class="text-gray-200 mb-6">
+      Le mostramos exactamente cómo conseguir más clientes en menos de 15 minutos.
+    </p>
+
+    <a href="https://wa.me/573006170055?text=Hola%20quiero%20crecer"
+       class="group relative inline-block">
+
+      <!-- glow -->
+      <span class="absolute inset-0 bg-white/20 blur-md opacity-60 group-hover:opacity-100 transition"></span>
+
+      <!-- botón -->
+      <span class="relative bg-white text-black px-8 py-4 rounded-xl font-semibold text-lg
+                   transform transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 shadow-lg">
+        Solicitar diagnóstico →
+      </span>
+
+    </a>
+
+  </div>
+
 </section>
+
+<!-- ESTILOS PARA ANIMACIÓN -->
+<style>
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientMove 8s ease infinite;
+}
+</style>
 
 <!-- FOOTER -->
 
@@ -164,7 +205,7 @@
 <!-- WHATSAPP FLOAT -->
 
 <a href="https://wa.me/573006170055"
-class="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full shadow-lg hover:bg-green-600 transition"> <img src="images/whatsapp-icon.svg" class="w-6"> </a>
+class="fixed bottom-6 right-6 bg-green-500 p-4 rounded-full shadow-lg hover:bg-green-600 transition"> <img src="Images/whatsapp-icon.svg" class="w-6"> </a>
 
 </body>
 </html>
