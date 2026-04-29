@@ -37,122 +37,99 @@
 </header>
 
 <!-- HERO -->
-<section id="hero" class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 overflow-hidden">
-
-  <!-- GRID -->
-  <div id="gridLayer" class="absolute inset-0 opacity-10"
-       style="background-image: linear-gradient(#ffffff10 1px, transparent 1px), linear-gradient(90deg, #ffffff10 1px, transparent 1px); background-size: 40px 40px;">
-  </div>
-
-  <!-- GLOW -->
-  <div id="glowLayer" class="absolute w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-3xl top-1/3 left-1/2 -translate-x-1/2"></div>
-
-  <!-- CONTENIDO -->
-  <div class="relative z-10 max-w-3xl">
-
 <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-  Más clientes, más ventas,<br> menos esfuerzo
+  Convierte tu marketing en un sistema que genere decisiones y crecimiento real
 </h1>
 
-<!-- ELEMENTO VISUAL -->
-<div class="mt-6 flex justify-center">
-  <div class="relative w-16 h-16">
+<p class="text-lg md:text-xl text-gray-400 mb-8">
+  Ayudamos a negocios a dejar de improvisar en digital y construir una estructura clara de captación, conversión y medición.
+</p>
 
-    <!-- círculo glow -->
-    <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full blur-lg opacity-60 animate-pulse"></div>
+<a href="https://wa.me/573006170055?text=Hola%20quiero%20un%20diagnóstico%20estratégico"
+   class="group relative inline-block">
 
-    <!-- núcleo -->
-    <div class="relative w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center shadow-lg">
-      <span class="text-white text-xl font-bold">→</span>
+  <span class="absolute inset-0 bg-green-500 rounded-xl blur-md opacity-60 group-hover:opacity-100 transition"></span>
+
+  <span class="relative bg-green-500 px-8 py-4 rounded-xl text-lg font-semibold
+               transform transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 shadow-lg">
+    Agendar diagnóstico estratégico →
+  </span>
+
+</a>
+
+
+<!-- SECCIÓN PROBLEMA -->
+
+<section class="py-20 px-6 text-center max-w-4xl mx-auto">
+  <h2 class="text-3xl font-bold mb-6">
+    El problema no es el marketing. Es la falta de estructura.
+  </h2>
+
+  <p class="text-gray-400 text-lg mb-4">
+    Muchos negocios invierten en redes, pauta o páginas web sin claridad de qué funciona realmente.
+  </p>
+
+  <p class="text-gray-400 text-lg mb-4">
+    Tienen datos, pero no decisiones. Acciones, pero no sistema.
+  </p>
+
+  <p class="text-white font-semibold text-lg mt-6">
+    Y eso hace que el crecimiento dependa de la improvisación.
+  </p>
+</section>
+
+
+
+<!-- SISTEMA -->
+
+<section class="py-20 px-6 bg-black text-center">
+  <h2 class="text-3xl font-bold mb-12">Cómo trabajamos</h2>
+
+  <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800">
+      <h3 class="font-semibold mb-2">1. Claridad del negocio</h3>
+      <p class="text-gray-400 text-sm">Definimos el objetivo real y priorizamos lo que importa.</p>
+    </div>
+
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800">
+      <h3 class="font-semibold mb-2">2. Diseño del sistema</h3>
+      <p class="text-gray-400 text-sm">Estructuramos captación, conversión y flujo de ventas.</p>
+    </div>
+
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800">
+      <h3 class="font-semibold mb-2">3. Medición accionable</h3>
+      <p class="text-gray-400 text-sm">Traducimos datos en decisiones reales.</p>
+    </div>
+
+    <div class="bg-gray-900 p-6 rounded-xl border border-gray-800">
+      <h3 class="font-semibold mb-2">4. Ajuste continuo</h3>
+      <p class="text-gray-400 text-sm">Optimizamos y escalamos con criterio.</p>
     </div>
 
   </div>
-</div>
-
-    <p class="text-lg md:text-xl text-gray-400 mb-8">
-      Creamos páginas web, campañas y automatizaciones que generan resultados reales para su negocio.
-    </p>
-
-    <a href="https://wa.me/573006170055?text=Hola%20quiero%20más%20clientes"
-       class="group relative inline-block">
-
-      <span class="absolute inset-0 bg-green-500 rounded-xl blur-md opacity-60 group-hover:opacity-100 transition"></span>
-
-      <span class="relative bg-green-500 px-8 py-4 rounded-xl text-lg font-semibold
-                   transform transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 shadow-lg">
-        Solicite su diagnóstico GRATIS →
-      </span>
-
-    </a>
-
-  </div>
-
 </section>
 
-<!-- SCRIPT MOUSE JIGGLER -->
-<script>
-const hero = document.getElementById("hero");
-const grid = document.getElementById("gridLayer");
-const glow = document.getElementById("glowLayer");
+<!-- SECCION DE FILTRO -->
 
-// posición objetivo (mouse)
-let targetX = 0;
-let targetY = 0;
+<section class="py-20 px-6 text-center max-w-3xl mx-auto">
+  <h2 class="text-3xl font-bold mb-6">
+    No trabajamos con todos los negocios
+  </h2>
 
-// posición actual (animada)
-let currentX = 0;
-let currentY = 0;
-
-hero.addEventListener("mousemove", (e) => {
-  targetX = (e.clientX / window.innerWidth - 0.5) * 30;
-  targetY = (e.clientY / window.innerHeight - 0.5) * 30;
-});
-
-// animación suave (inercia)
-function animate() {
-  currentX += (targetX - currentX) * 0.08;
-  currentY += (targetY - currentY) * 0.08;
-
-  grid.style.transform = `translate(${currentX * 0.5}px, ${currentY * 0.5}px)`;
-  glow.style.transform = `translate(${currentX}px, ${currentY}px)`;
-
-  requestAnimationFrame(animate);
-}
-
-animate();
-</script>
-
-<!-- SERVICIOS -->
-
-<section class="py-20 px-6 bg-black text-center">
-  <h2 class="text-3xl font-bold mb-12">Servicios</h2>
-
-  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-
-<div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-purple-500 transition hover:-translate-y-2">
-  <h3 class="text-xl font-semibold mb-4">Páginas Web</h3>
-  <p class="text-gray-400">
-    Diseños modernos optimizados para convertir visitantes en clientes.
+  <p class="text-gray-400 mb-6">
+    Raíz Hub Digital no es para quienes buscan simplemente “manejo de redes” o soluciones rápidas.
   </p>
-</div>
 
-<div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-indigo-500 transition hover:-translate-y-2">
-  <h3 class="text-xl font-semibold mb-4">Publicidad Digital</h3>
-  <p class="text-gray-400">
-    Campañas en Meta y Google enfocadas en resultados reales.
+  <ul class="text-gray-400 space-y-2">
+    <li>✖ Negocios sin claridad de objetivos</li>
+    <li>✖ Empresas que buscan solo ejecución táctica</li>
+    <li>✖ Proyectos que no quieren tomar decisiones estratégicas</li>
+  </ul>
+
+  <p class="text-white mt-6 font-semibold">
+    Trabajamos con quienes quieren construir un sistema real de crecimiento.
   </p>
-</div>
-
-<div class="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-blue-500 transition hover:-translate-y-2">
-  <h3 class="text-xl font-semibold mb-4">Automatización</h3>
-  <p class="text-gray-400">
-    Chatbots y sistemas que trabajan por usted 24/7.
-  </p>
-</div>
-
-
-  </div>
 </section>
 
 <!-- BENEFICIOS -->
@@ -184,56 +161,19 @@ animate();
 
 <!-- CTA -->
 
-<section class="py-20 px-6 text-center relative overflow-hidden">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">
+  Diseña un sistema que haga crecer tu negocio con criterio
+</h2>
 
-  <!-- GRADIENTE ANIMADO -->
-  <div class="absolute inset-0 animate-gradient bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600"></div>
+<p class="text-gray-200 mb-6">
+  En esta sesión revisamos tu situación actual y detectamos exactamente qué está frenando tu crecimiento.
+</p>
 
-  <!-- CAPA OSCURA (para mantener elegancia) -->
-  <div class="absolute inset-0 bg-black/40"></div>
+<span class="relative bg-white text-black px-8 py-4 rounded-xl font-semibold text-lg">
+  Agendar diagnóstico →
+</span>
 
-  <!-- CONTENIDO -->
-  <div class="relative z-10">
 
-    <h2 class="text-3xl md:text-4xl font-bold mb-6">
-      Empiece a crecer hoy mismo
-    </h2>
-
-    <p class="text-gray-200 mb-6">
-      Le mostramos exactamente cómo conseguir más clientes en menos de 15 minutos.
-    </p>
-
-    <a href="https://wa.me/573006170055?text=Hola%20quiero%20crecer"
-       class="group relative inline-block">
-
-      <!-- glow -->
-      <span class="absolute inset-0 bg-white/20 blur-md opacity-60 group-hover:opacity-100 transition"></span>
-
-      <!-- botón -->
-      <span class="relative bg-white text-black px-8 py-4 rounded-xl font-semibold text-lg
-                   transform transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 shadow-lg">
-        Solicitar diagnóstico →
-      </span>
-
-    </a>
-
-  </div>
-
-</section>
-
-<!-- ESTILOS PARA ANIMACIÓN -->
-<style>
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradientMove 8s ease infinite;
-}
-</style>
 
 <!-- FOOTER -->
 
