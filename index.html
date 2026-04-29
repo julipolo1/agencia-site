@@ -74,19 +74,37 @@
 
 </section>
 
-<!-- SCRIPT PARALLAX -->
+<!-- SCRIPT MOUSE JIGGLER -->
 <script>
 const hero = document.getElementById("hero");
 const grid = document.getElementById("gridLayer");
 const glow = document.getElementById("glowLayer");
 
-hero.addEventListener("mousemove", (e) => {
-  const x = (e.clientX / window.innerWidth - 0.5) * 20;
-  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+// posición objetivo (mouse)
+let targetX = 0;
+let targetY = 0;
 
-  grid.style.transform = `translate(${x}px, ${y}px)`;
-  glow.style.transform = `translate(${x * 1.5}px, ${y * 1.5}px)`;
+// posición actual (animada)
+let currentX = 0;
+let currentY = 0;
+
+hero.addEventListener("mousemove", (e) => {
+  targetX = (e.clientX / window.innerWidth - 0.5) * 30;
+  targetY = (e.clientY / window.innerHeight - 0.5) * 30;
 });
+
+// animación suave (inercia)
+function animate() {
+  currentX += (targetX - currentX) * 0.08;
+  currentY += (targetY - currentY) * 0.08;
+
+  grid.style.transform = `translate(${currentX * 0.5}px, ${currentY * 0.5}px)`;
+  glow.style.transform = `translate(${currentX}px, ${currentY}px)`;
+
+  requestAnimationFrame(animate);
+}
+
+animate();
 </script>
 
 <!-- SERVICIOS -->
