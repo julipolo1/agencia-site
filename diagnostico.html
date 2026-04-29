@@ -6,11 +6,14 @@
   <title>Diagnóstico Estratégico | Raíz Hub Digital</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 </head>
 
 <body class="bg-black text-white">
 
-<!-- BACKGROUND -->
 <div class="fixed inset-0 -z-10">
   <div class="absolute inset-0 bg-black"></div>
   <div class="absolute inset-0 opacity-20"
@@ -21,78 +24,53 @@
 
 <main class="max-w-3xl mx-auto px-6 py-20">
 
-  <!-- HEADER -->
   <div class="mb-12 text-center">
-    <h1 class="text-4xl font-bold mb-4">
-      Diagnóstico Estratégico
-    </h1>
-
-    <p class="text-gray-400">
-      Evaluamos si tu negocio necesita más marketing o un sistema.
-    </p>
+    <h1 class="text-4xl font-bold mb-4">Diagnóstico Estratégico</h1>
+    <p class="text-gray-400">Evaluamos si tu negocio necesita más marketing o un sistema.</p>
   </div>
 
-  <!-- CONTEXTO -->
-  <div class="bg-white/5 border border-white/10 rounded-xl p-6 mb-10 backdrop-blur">
-    <p class="text-gray-300 text-sm">
-      ✔ No es una llamada de ventas<br>
-      ✔ No es para todos los negocios<br>
-      ✔ Es una sesión estratégica
-    </p>
-  </div>
-
-  <!-- FORM -->
   <form id="form" class="space-y-8">
 
     <div>
       <label class="block mb-2 font-semibold">¿A qué se dedica tu negocio?</label>
-      <input required type="text"
+      <input name="negocio" required type="text"
         class="w-full p-3 rounded-lg bg-white/5 border border-white/10 focus:border-purple-500 outline-none">
     </div>
 
-<div>
-  <label class="block mb-4 font-semibold">
-    ¿Cuál es tu principal objetivo?
-  </label>
+    <div>
+      <label class="block mb-4 font-semibold">¿Cuál es tu principal objetivo?</label>
 
-  <div class="grid gap-3">
+      <div class="grid gap-3">
+        <button type="button" class="option-btn">Conseguir más clientes</button>
+        <button type="button" class="option-btn">Escalar ventas</button>
+        <button type="button" class="option-btn">Mejorar conversión</button>
+        <button type="button" class="option-btn">Entender qué no funciona</button>
+      </div>
 
-    <button type="button" class="option-btn">Conseguir más clientes</button>
-    <button type="button" class="option-btn">Escalar ventas</button>
-    <button type="button" class="option-btn">Mejorar conversión</button>
-    <button type="button" class="option-btn">Entender qué no funciona</button>
+      <input type="hidden" name="objetivo" id="objetivo" required>
+    </div>
 
-  </div>
-
-  <input type="hidden" name="objetivo" id="objetivo" required>
-</div>
-
-<div>
-  <label class="block mb-2 font-semibold">
-    ¿Cuánto estás invirtiendo actualmente en marketing mensual?
-  </label>
-
-  <select required class="w-full p-3 rounded-lg bg-white/5 border border-white/10 focus:border-purple-500 outline-none">
-    <option value="">Selecciona una opción</option>
-
-    <option>Menos de $500.000 COP</option>
-    <option>$500.001 - $1.000.000 COP</option>
-    <option>$1.000.001 - $3.000.000 COP</option>
-    <option>$3.000.001 - $6.000.000 COP</option>
-    <option>Más de $6.000.000 COP</option>
-
-  </select>
-</div>
+    <div>
+      <label class="block mb-2 font-semibold">Inversión mensual</label>
+      <select name="inversion" required class="w-full p-3 rounded-lg bg-white/5 border border-white/10">
+        <option value="">Selecciona</option>
+        <option>Menos de $500.000 COP</option>
+        <option>$500.001 - $1.000.000 COP</option>
+        <option>$1.000.001 - $3.000.000 COP</option>
+        <option>$3.000.001 - $6.000.000 COP</option>
+        <option>Más de $6.000.000 COP</option>
+      </select>
+    </div>
 
     <div>
       <label class="block mb-2 font-semibold">¿Qué no está funcionando?</label>
-      <textarea required
+      <textarea name="problema" required
         class="w-full p-3 rounded-lg bg-white/5 border border-white/10"></textarea>
     </div>
 
     <div>
-      <label class="block mb-2 font-semibold">¿Tienes sistema o acciones sueltas?</label>
-      <select required class="w-full p-3 rounded-lg bg-white/5 border border-white/10">
+      <label class="block mb-2 font-semibold">¿Tienes sistema?</label>
+      <select name="estructura" required class="w-full p-3 rounded-lg bg-white/5 border border-white/10">
         <option value="">Selecciona</option>
         <option>No tengo claridad</option>
         <option>Acciones sueltas</option>
@@ -102,47 +80,63 @@
 
     <div>
       <label class="block mb-2 font-semibold">Correo</label>
-      <input required type="email"
+      <input name="email" required type="email"
         class="w-full p-3 rounded-lg bg-white/5 border border-white/10">
     </div>
 
     <button type="submit"
-      class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 py-4 rounded-xl font-semibold text-lg hover:scale-105 transition shadow-lg">
-      Continuar →
+      class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 py-4 rounded-xl font-semibold text-lg">
+      Enviar diagnóstico →
     </button>
 
   </form>
 
-  <!-- RESULTADO -->
   <div id="resultado" class="hidden text-center mt-12">
-
-    <h2 class="text-2xl font-bold mb-4">
-      Tu caso puede ser evaluado
-    </h2>
-
-    <p class="text-gray-400 mb-6">
-      Agenda una sesión para revisar tu sistema en detalle.
-    </p>
-
-    <a href="https://calendly.com/raizhubdigital/30min"
-       target="_blank"
-       class="inline-block px-8 py-4 rounded-xl font-semibold border border-white/10 hover:border-purple-500 transition backdrop-blur bg-white/5">
-       Agendar sesión →
-    </a>
-
+    <h2 class="text-2xl font-bold mb-4">Diagnóstico enviado</h2>
+    <p class="text-gray-400 mb-6">Revisaremos tu caso y te contactaremos.</p>
   </div>
 
 </main>
 
 <script>
+(function(){
+  emailjs.init("TU_PUBLIC_KEY"); // <-- AQUÍ
+})();
+
+// selección botones
+const buttons = document.querySelectorAll(".option-btn");
+const inputObjetivo = document.getElementById("objetivo");
+
+buttons.forEach(btn => {
+  btn.className += " w-full text-left p-3 rounded-lg bg-white/5 border border-white/10 hover:border-purple-500 transition";
+
+  btn.addEventListener("click", () => {
+    buttons.forEach(b => b.classList.remove("bg-purple-600"));
+    btn.classList.add("bg-purple-600");
+    inputObjetivo.value = btn.innerText;
+  });
+});
+
+// submit
 const form = document.getElementById("form");
 const resultado = document.getElementById("resultado");
 
 form.addEventListener("submit", function(e){
   e.preventDefault();
-  form.style.display = "none";
-  resultado.classList.remove("hidden");
-  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+
+  if(!inputObjetivo.value){
+    alert("Selecciona un objetivo");
+    return;
+  }
+
+  emailjs.sendForm("TU_SERVICE_ID", "TU_TEMPLATE_ID", this)
+    .then(() => {
+      form.style.display = "none";
+      resultado.classList.remove("hidden");
+    }, (error) => {
+      alert("Error enviando. Revisa configuración.");
+      console.log(error);
+    });
 });
 </script>
 
