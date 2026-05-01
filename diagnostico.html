@@ -13,7 +13,6 @@
 
 <body class="bg-black text-white">
 
-<!-- BACKGROUND -->
 <div class="fixed inset-0 -z-10">
   <div class="absolute inset-0 bg-black"></div>
   <div class="absolute inset-0 opacity-20"
@@ -24,7 +23,6 @@
 
 <main class="max-w-2xl mx-auto px-6 py-16">
 
-  <!-- HEADER -->
   <div class="mb-12 text-center">
     <h1 class="text-4xl font-bold mb-4">Diagnóstico Estratégico</h1>
     <p class="text-gray-400 text-lg">
@@ -32,19 +30,18 @@
     </p>
   </div>
 
-  <!-- FORM -->
   <form id="form" class="space-y-10">
 
     <!-- NEGOCIO -->
     <div class="space-y-3 pb-6 border-b border-white/5">
-      <label class="block text-lg font-semibold">¿A qué se dedica tu negocio?</label>
+      <label class="text-lg font-semibold">¿A qué se dedica tu negocio?</label>
       <input name="negocio" required type="text"
-        class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none text-white placeholder-gray-500">
+        class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 outline-none">
     </div>
 
     <!-- OBJETIVO -->
     <div class="space-y-4 pb-6 border-b border-white/5">
-      <label class="block text-lg font-semibold">¿Cuál es tu principal objetivo?</label>
+      <label class="text-lg font-semibold">¿Cuál es tu principal objetivo?</label>
 
       <div class="grid gap-3">
         <button type="button" class="option-btn">Conseguir más clientes</button>
@@ -57,54 +54,55 @@
     </div>
 
     <!-- INVERSIÓN -->
-    <div class="space-y-3 pb-6 border-b border-white/5">
-      <label class="block text-lg font-semibold">Inversión mensual</label>
-      <select name="inversion" required
-        class="w-full p-4 rounded-xl bg-white/5 border border-white/10 text-white focus:border-purple-500 outline-none">
-        <option value="">Selecciona</option>
-        <option>Menos de $500.000 COP</option>
-        <option>$500.001 - $1.000.000 COP</option>
-        <option>$1.000.001 - $3.000.000 COP</option>
-        <option>$3.000.001 - $6.000.000 COP</option>
-        <option>Más de $6.000.000 COP</option>
-      </select>
+    <div class="space-y-4 pb-6 border-b border-white/5">
+      <label class="text-lg font-semibold">Inversión mensual</label>
+
+      <div class="grid gap-3">
+        <button type="button" class="inversion-btn">Menos de $500.000 COP</button>
+        <button type="button" class="inversion-btn">$500.001 - $1.000.000 COP</button>
+        <button type="button" class="inversion-btn">$1.000.001 - $3.000.000 COP</button>
+        <button type="button" class="inversion-btn">$3.000.001 - $6.000.000 COP</button>
+        <button type="button" class="inversion-btn">Más de $6.000.000 COP</button>
+      </div>
+
+      <input type="hidden" name="inversion" id="inversion" required>
     </div>
 
     <!-- PROBLEMA -->
     <div class="space-y-3 pb-6 border-b border-white/5">
-      <label class="block text-lg font-semibold">¿Qué no está funcionando?</label>
+      <label class="text-lg font-semibold">¿Qué no está funcionando?</label>
       <textarea name="problema" required rows="4"
-        class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 outline-none text-white"></textarea>
+        class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 outline-none"></textarea>
     </div>
 
-    <!-- ESTRUCTURA -->
-    <div class="space-y-3 pb-6 border-b border-white/5">
-      <label class="block text-lg font-semibold">¿Tienes sistema?</label>
-      <select name="estructura" required
-        class="w-full p-4 rounded-xl bg-white/5 border border-white/10 text-white focus:border-purple-500 outline-none">
-        <option value="">Selecciona</option>
-        <option>No tengo claridad</option>
-        <option>Acciones sueltas</option>
-        <option>Tengo algo estructurado</option>
-      </select>
+    <!-- SISTEMA -->
+    <div class="space-y-4 pb-6 border-b border-white/5">
+      <label class="text-lg font-semibold">¿Tienes sistema?</label>
+
+      <div class="grid gap-3">
+        <button type="button" class="sistema-btn">No tengo claridad</button>
+        <button type="button" class="sistema-btn">Acciones sueltas</button>
+        <button type="button" class="sistema-btn">Tengo algo estructurado</button>
+      </div>
+
+      <input type="hidden" name="estructura" id="estructura" required>
     </div>
 
     <!-- EMAIL -->
     <div class="space-y-3">
-      <label class="block text-lg font-semibold">Correo</label>
+      <label class="text-lg font-semibold">Correo</label>
       <input name="email" required type="email"
-        class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 outline-none text-white">
+        class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 outline-none">
     </div>
 
     <!-- BOTÓN -->
     <button type="submit"
-      class="w-full mt-6 bg-gradient-to-r from-purple-600 to-indigo-600 py-4 rounded-xl font-semibold text-lg hover:scale-[1.02] transition shadow-lg">
+      class="w-full mt-6 bg-gradient-to-r from-purple-600 to-indigo-600 py-4 rounded-xl font-semibold text-lg">
       Enviar diagnóstico →
     </button>
 
   </form>
 
-  <!-- RESULTADO -->
   <div id="resultado" class="hidden text-center mt-12">
     <h2 class="text-2xl font-bold mb-4">Diagnóstico enviado</h2>
     <p class="text-gray-400">Revisaremos tu caso y te contactaremos.</p>
@@ -117,19 +115,25 @@
   emailjs.init("SenRAhyy-pRrsu5K-");
 })();
 
-// botones objetivo
-const buttons = document.querySelectorAll(".option-btn");
-const inputObjetivo = document.getElementById("objetivo");
+// estilos base botones
+function setupButtons(selector, inputId){
+  const buttons = document.querySelectorAll(selector);
+  const input = document.getElementById(inputId);
 
-buttons.forEach(btn => {
-  btn.className += " w-full text-left p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500 hover:bg-white/10 transition text-gray-300";
+  buttons.forEach(btn => {
+    btn.className += " w-full text-left p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500 hover:bg-white/10 transition text-gray-300";
 
-  btn.addEventListener("click", () => {
-    buttons.forEach(b => b.classList.remove("bg-purple-600", "text-white"));
-    btn.classList.add("bg-purple-600", "text-white");
-    inputObjetivo.value = btn.innerText;
+    btn.addEventListener("click", () => {
+      buttons.forEach(b => b.classList.remove("bg-purple-600", "text-white"));
+      btn.classList.add("bg-purple-600", "text-white");
+      input.value = btn.innerText;
+    });
   });
-});
+}
+
+setupButtons(".option-btn", "objetivo");
+setupButtons(".inversion-btn", "inversion");
+setupButtons(".sistema-btn", "estructura");
 
 // submit
 const form = document.getElementById("form");
@@ -138,8 +142,10 @@ const resultado = document.getElementById("resultado");
 form.addEventListener("submit", function(e){
   e.preventDefault();
 
-  if(!inputObjetivo.value){
-    alert("Selecciona un objetivo");
+  if(!document.getElementById("objetivo").value ||
+     !document.getElementById("inversion").value ||
+     !document.getElementById("estructura").value){
+    alert("Completa todas las selecciones");
     return;
   }
 
@@ -148,7 +154,7 @@ form.addEventListener("submit", function(e){
       form.style.display = "none";
       resultado.classList.remove("hidden");
     }, (error) => {
-      alert("Error enviando. Revisa configuración.");
+      alert("Error enviando");
       console.log(error);
     });
 });
