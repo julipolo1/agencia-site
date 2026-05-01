@@ -12,6 +12,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+
+.gradient-text {
+  background: linear-gradient(90deg, #7C3AED, #2563EB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
     .card-system {
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.08);
@@ -41,13 +48,17 @@
 <!-- BACKGROUND VIDEO -->
 <div class="fixed inset-0 -z-10 overflow-hidden">
 
-  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-30">
+  <!-- VIDEO -->
+  <video autoplay muted loop playsinline 
+    class="absolute inset-0 w-full h-full object-cover opacity-40">
     <source src="Images/network-system-raizhub-bg.webm" type="video/webm">
   </video>
 
-  <div class="absolute inset-0 bg-black/70"></div>
+  <!-- OVERLAY OSCURO CONTROLADO -->
+  <div class="absolute inset-0 bg-black/60"></div>
 
-  <div class="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-black to-indigo-900/30"></div>
+  <!-- GRADIENTE SUAVE -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black"></div>
 
 </div>
 
@@ -93,37 +104,63 @@
 
 </section>
 
-<!-- PROBLEMA -->
-<section class="py-24 px-6 text-center max-w-4xl mx-auto">
+<section class="py-28 px-6">
 
-  <h2 class="text-3xl font-bold mb-6">
-    El problema no es hacer marketing. Es no tener un sistema.
-  </h2>
+  <div class="max-w-5xl mx-auto text-center">
 
-  <p class="text-gray-400 mb-4">
-    Muchos negocios invierten en publicidad, redes o páginas web sin saber qué funciona realmente.
-  </p>
+    <!-- BLOQUE DESTACADO -->
+    <div class="relative mb-16 p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl">
 
-  <p class="text-gray-400 mb-4">
-    Tienen datos, pero no decisiones. Acciones, pero no estructura.
-  </p>
+      <div class="flex items-center justify-center gap-3 mb-4 opacity-80">
+        <img src="Images/tree.svg" class="w-6">
+        <span class="text-sm text-gray-400">
+          No se trata de hacer más marketing.
+        </span>
+      </div>
 
-  <p class="text-white font-semibold mt-6">
-    El crecimiento termina dependiendo de la improvisación.
-  </p>
+      <h2 class="text-2xl md:text-3xl font-semibold leading-relaxed">
+        Se trata de tener un sistema claro para 
+        <span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+          decidir, invertir y crecer
+        </span>
+      </h2>
 
-</section>
+    </div>
 
-<!-- SOLUCIÓN -->
-<section class="py-24 px-6 text-center max-w-4xl mx-auto">
+    <!-- PROBLEMA -->
+    <h2 class="text-3xl font-bold mb-6">
+      El problema no es hacer marketing.
+      <br class="hidden md:block">
+      Es no tener un sistema.
+    </h2>
 
-  <h2 class="text-3xl font-bold mb-6">
-    Diseñamos sistemas de crecimiento, no acciones sueltas
-  </h2>
+    <p class="text-gray-400 mb-4">
+      Muchos negocios invierten en publicidad, redes o páginas web sin saber qué funciona realmente.
+    </p>
 
-  <p class="text-gray-400">
-    Raíz Hub Digital funciona como una consultoría estratégica que conecta marketing, datos y decisiones para generar resultados sostenibles.
-  </p>
+    <p class="text-gray-400 mb-4">
+      Tienen datos, pero no decisiones. Acciones, pero no estructura.
+    </p>
+
+    <p class="text-white font-semibold mt-6">
+      El crecimiento termina dependiendo de la improvisación.
+    </p>
+
+    <!-- ESPACIO -->
+    <div class="h-20"></div>
+
+    <!-- SOLUCIÓN -->
+    <h2 class="text-3xl font-bold mb-6">
+      Diseñamos sistemas de crecimiento,
+      <br class="hidden md:block">
+      no acciones sueltas
+    </h2>
+
+    <p class="text-gray-400 max-w-2xl mx-auto">
+      Raíz Hub Digital funciona como una consultoría estratégica que conecta marketing, datos y decisiones para generar resultados sostenibles.
+    </p>
+
+  </div>
 
 </section>
 
