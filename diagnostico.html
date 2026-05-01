@@ -9,11 +9,11 @@
 
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
 </head>
 
 <body class="bg-black text-white">
 
+<!-- BACKGROUND -->
 <div class="fixed inset-0 -z-10">
   <div class="absolute inset-0 bg-black"></div>
   <div class="absolute inset-0 opacity-20"
@@ -22,23 +22,29 @@
   </div>
 </div>
 
-<main class="max-w-3xl mx-auto px-6 py-20">
+<main class="max-w-2xl mx-auto px-6 py-16">
 
+  <!-- HEADER -->
   <div class="mb-12 text-center">
     <h1 class="text-4xl font-bold mb-4">Diagnóstico Estratégico</h1>
-    <p class="text-gray-400">Evaluamos si tu negocio necesita más marketing o un sistema.</p>
+    <p class="text-gray-400 text-lg">
+      Evaluamos si tu negocio necesita más marketing o un sistema.
+    </p>
   </div>
 
-  <form id="form" class="space-y-8">
+  <!-- FORM -->
+  <form id="form" class="space-y-10">
 
-    <div>
-      <label class="block mb-2 font-semibold">¿A qué se dedica tu negocio?</label>
+    <!-- NEGOCIO -->
+    <div class="space-y-3 pb-6 border-b border-white/5">
+      <label class="block text-lg font-semibold">¿A qué se dedica tu negocio?</label>
       <input name="negocio" required type="text"
-        class="w-full p-3 rounded-lg bg-white/5 border border-white/10 focus:border-purple-500 outline-none">
+        class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none text-white placeholder-gray-500">
     </div>
 
-    <div>
-      <label class="block mb-4 font-semibold">¿Cuál es tu principal objetivo?</label>
+    <!-- OBJETIVO -->
+    <div class="space-y-4 pb-6 border-b border-white/5">
+      <label class="block text-lg font-semibold">¿Cuál es tu principal objetivo?</label>
 
       <div class="grid gap-3">
         <button type="button" class="option-btn">Conseguir más clientes</button>
@@ -50,9 +56,11 @@
       <input type="hidden" name="objetivo" id="objetivo" required>
     </div>
 
-    <div>
-      <label class="block mb-2 font-semibold">Inversión mensual</label>
-      <select name="inversion" required class="w-full p-3 rounded-lg bg-white/5 border border-white/10">
+    <!-- INVERSIÓN -->
+    <div class="space-y-3 pb-6 border-b border-white/5">
+      <label class="block text-lg font-semibold">Inversión mensual</label>
+      <select name="inversion" required
+        class="w-full p-4 rounded-xl bg-white/5 border border-white/10 text-white focus:border-purple-500 outline-none">
         <option value="">Selecciona</option>
         <option>Menos de $500.000 COP</option>
         <option>$500.001 - $1.000.000 COP</option>
@@ -62,15 +70,18 @@
       </select>
     </div>
 
-    <div>
-      <label class="block mb-2 font-semibold">¿Qué no está funcionando?</label>
-      <textarea name="problema" required
-        class="w-full p-3 rounded-lg bg-white/5 border border-white/10"></textarea>
+    <!-- PROBLEMA -->
+    <div class="space-y-3 pb-6 border-b border-white/5">
+      <label class="block text-lg font-semibold">¿Qué no está funcionando?</label>
+      <textarea name="problema" required rows="4"
+        class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 outline-none text-white"></textarea>
     </div>
 
-    <div>
-      <label class="block mb-2 font-semibold">¿Tienes sistema?</label>
-      <select name="estructura" required class="w-full p-3 rounded-lg bg-white/5 border border-white/10">
+    <!-- ESTRUCTURA -->
+    <div class="space-y-3 pb-6 border-b border-white/5">
+      <label class="block text-lg font-semibold">¿Tienes sistema?</label>
+      <select name="estructura" required
+        class="w-full p-4 rounded-xl bg-white/5 border border-white/10 text-white focus:border-purple-500 outline-none">
         <option value="">Selecciona</option>
         <option>No tengo claridad</option>
         <option>Acciones sueltas</option>
@@ -78,41 +89,44 @@
       </select>
     </div>
 
-    <div>
-      <label class="block mb-2 font-semibold">Correo</label>
+    <!-- EMAIL -->
+    <div class="space-y-3">
+      <label class="block text-lg font-semibold">Correo</label>
       <input name="email" required type="email"
-        class="w-full p-3 rounded-lg bg-white/5 border border-white/10">
+        class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 outline-none text-white">
     </div>
 
+    <!-- BOTÓN -->
     <button type="submit"
-      class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 py-4 rounded-xl font-semibold text-lg">
+      class="w-full mt-6 bg-gradient-to-r from-purple-600 to-indigo-600 py-4 rounded-xl font-semibold text-lg hover:scale-[1.02] transition shadow-lg">
       Enviar diagnóstico →
     </button>
 
   </form>
 
+  <!-- RESULTADO -->
   <div id="resultado" class="hidden text-center mt-12">
     <h2 class="text-2xl font-bold mb-4">Diagnóstico enviado</h2>
-    <p class="text-gray-400 mb-6">Revisaremos tu caso y te contactaremos.</p>
+    <p class="text-gray-400">Revisaremos tu caso y te contactaremos.</p>
   </div>
 
 </main>
 
 <script>
 (function(){
-  emailjs.init("TU_PUBLIC_KEY"); // <-- AQUÍ
+  emailjs.init("SenRAhyy-pRrsu5K-");
 })();
 
-// selección botones
+// botones objetivo
 const buttons = document.querySelectorAll(".option-btn");
 const inputObjetivo = document.getElementById("objetivo");
 
 buttons.forEach(btn => {
-  btn.className += " w-full text-left p-3 rounded-lg bg-white/5 border border-white/10 hover:border-purple-500 transition";
+  btn.className += " w-full text-left p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500 hover:bg-white/10 transition text-gray-300";
 
   btn.addEventListener("click", () => {
-    buttons.forEach(b => b.classList.remove("bg-purple-600"));
-    btn.classList.add("bg-purple-600");
+    buttons.forEach(b => b.classList.remove("bg-purple-600", "text-white"));
+    btn.classList.add("bg-purple-600", "text-white");
     inputObjetivo.value = btn.innerText;
   });
 });
@@ -129,7 +143,7 @@ form.addEventListener("submit", function(e){
     return;
   }
 
-  emailjs.sendForm("TU_SERVICE_ID", "TU_TEMPLATE_ID", this)
+  emailjs.sendForm("service_dmwl5ok", "template_dpfmufi", this)
     .then(() => {
       form.style.display = "none";
       resultado.classList.remove("hidden");
