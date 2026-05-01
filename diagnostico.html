@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diagnóstico Estratégico | Raíz Hub Digital</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://cdn.tailwindcss.com"></script>
+<title>Diagnóstico Estratégico | Raíz Hub Digital</title>
 
-  <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 </head>
 
 <body class="bg-black text-white">
 
+<!-- BACKGROUND -->
 <div class="fixed inset-0 -z-10">
   <div class="absolute inset-0 bg-black"></div>
   <div class="absolute inset-0 opacity-20"
@@ -21,142 +22,222 @@
   </div>
 </div>
 
+<!-- FORM -->
 <main class="max-w-2xl mx-auto px-6 py-16">
 
-  <div class="mb-12 text-center">
-    <h1 class="text-4xl font-bold mb-4">Diagnóstico Estratégico</h1>
-    <p class="text-gray-400 text-lg">
-      Evaluamos si tu negocio necesita más marketing o un sistema.
-    </p>
-  </div>
+<h1 class="text-3xl font-bold text-center mb-2">
+Diagnóstico Estratégico
+</h1>
 
-  <form id="form" class="space-y-10">
+<p class="text-gray-400 text-center mb-10">
+Cuéntanos sobre tu negocio y te diremos qué necesitas para crecer
+</p>
 
-    <!-- NEGOCIO -->
-    <div class="space-y-3 pb-6 border-b border-white/5">
-      <label class="text-lg font-semibold">¿A qué se dedica tu negocio?</label>
-      <input name="negocio" required type="text"
-        class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 outline-none">
-    </div>
+<form id="form" class="space-y-10">
 
-    <!-- OBJETIVO -->
-    <div class="space-y-4 pb-6 border-b border-white/5">
-      <label class="text-lg font-semibold">¿Cuál es tu principal objetivo?</label>
+<!-- NOMBRE -->
+<div>
+<label class="text-lg font-semibold block mb-3">
+¿Cómo se llama tu negocio?
+</label>
 
-      <div class="grid gap-3">
-        <button type="button" class="option-btn">Conseguir más clientes</button>
-        <button type="button" class="option-btn">Escalar ventas</button>
-        <button type="button" class="option-btn">Mejorar conversión</button>
-        <button type="button" class="option-btn">Entender qué no funciona</button>
-      </div>
+<input name="negocio_nombre" required type="text"
+class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 outline-none">
+</div>
 
-      <input type="hidden" name="objetivo" id="objetivo" required>
-    </div>
+<!-- QUÉ HACE -->
+<div>
+<label class="text-lg font-semibold block mb-3">
+¿Qué vendes o a qué te dedicas?
+</label>
 
-    <!-- INVERSIÓN -->
-    <div class="space-y-4 pb-6 border-b border-white/5">
-      <label class="text-lg font-semibold">Inversión mensual</label>
+<input name="negocio" required type="text"
+placeholder="Ej: ropa, comida, servicios..."
+class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 outline-none">
+</div>
 
-      <div class="grid gap-3">
-        <button type="button" class="inversion-btn">Menos de $500.000 COP</button>
-        <button type="button" class="inversion-btn">$500.001 - $1.000.000 COP</button>
-        <button type="button" class="inversion-btn">$1.000.001 - $3.000.000 COP</button>
-        <button type="button" class="inversion-btn">$3.000.001 - $6.000.000 COP</button>
-        <button type="button" class="inversion-btn">Más de $6.000.000 COP</button>
-      </div>
+<!-- MOMENTO -->
+<div>
+<label class="text-lg font-semibold block mb-4">
+¿En qué momento está tu negocio?
+</label>
 
-      <input type="hidden" name="inversion" id="inversion" required>
-    </div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<button type="button" class="btn momento">Estoy empezando</button>
+<button type="button" class="btn momento">Ya vendo, pero quiero crecer</button>
+<button type="button" class="btn momento">Estoy estancado</button>
+<button type="button" class="btn momento">Vendo bien, pero quiero escalar</button>
+</div>
 
-    <!-- PROBLEMA -->
-    <div class="space-y-3 pb-6 border-b border-white/5">
-      <label class="text-lg font-semibold">¿Qué no está funcionando?</label>
-      <textarea name="problema" required rows="4"
-        class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 outline-none"></textarea>
-    </div>
+<input type="hidden" name="momento" id="momento">
+</div>
 
-    <!-- SISTEMA -->
-    <div class="space-y-4 pb-6 border-b border-white/5">
-      <label class="text-lg font-semibold">¿Tienes sistema?</label>
+<!-- OBJETIVO -->
+<div>
+<label class="text-lg font-semibold block mb-4">
+¿Qué es lo que más necesitas ahora mismo?
+</label>
 
-      <div class="grid gap-3">
-        <button type="button" class="sistema-btn">No tengo claridad</button>
-        <button type="button" class="sistema-btn">Acciones sueltas</button>
-        <button type="button" class="sistema-btn">Tengo algo estructurado</button>
-      </div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<button type="button" class="btn objetivo">Conseguir más clientes</button>
+<button type="button" class="btn objetivo">Vender más</button>
+<button type="button" class="btn objetivo">Entender por qué no vendo</button>
+<button type="button" class="btn objetivo">Organizar mi marketing</button>
+</div>
 
-      <input type="hidden" name="estructura" id="estructura" required>
-    </div>
+<input type="hidden" name="objetivo" id="objetivo">
+</div>
 
-    <!-- EMAIL -->
-    <div class="space-y-3">
-      <label class="text-lg font-semibold">Correo</label>
-      <input name="email" required type="email"
-        class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 outline-none">
-    </div>
+<!-- CLIENTES -->
+<div>
+<label class="text-lg font-semibold block mb-4">
+¿Cómo consigues clientes hoy?
+</label>
 
-    <!-- BOTÓN -->
-    <button type="submit"
-      class="w-full mt-6 bg-gradient-to-r from-purple-600 to-indigo-600 py-4 rounded-xl font-semibold text-lg">
-      Enviar diagnóstico →
-    </button>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<button type="button" class="btn clientes">Referidos</button>
+<button type="button" class="btn clientes">Redes sociales</button>
+<button type="button" class="btn clientes">Publicidad paga</button>
+<button type="button" class="btn clientes">WhatsApp / contactos</button>
+<button type="button" class="btn clientes">No tengo claro</button>
+</div>
 
-  </form>
+<input type="hidden" name="clientes" id="clientes">
+</div>
 
-  <div id="resultado" class="hidden text-center mt-12">
-    <h2 class="text-2xl font-bold mb-4">Diagnóstico enviado</h2>
-    <p class="text-gray-400">Revisaremos tu caso y te contactaremos.</p>
-  </div>
+<!-- INVERSIÓN -->
+<div>
+<label class="text-lg font-semibold block mb-4">
+¿Cuánto inviertes en publicidad al mes?
+</label>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<button type="button" class="btn inversion">No invierto</button>
+<button type="button" class="btn inversion">Menos de $500.000</button>
+<button type="button" class="btn inversion">$500.000 - $1M</button>
+<button type="button" class="btn inversion">$1M - $3M</button>
+<button type="button" class="btn inversion">$3M - $6M</button>
+<button type="button" class="btn inversion">Más de $6M</button>
+</div>
+
+<input type="hidden" name="inversion" id="inversion">
+</div>
+
+<!-- PROBLEMA -->
+<div>
+<label class="text-lg font-semibold block mb-3">
+¿Qué sientes que no está funcionando?
+</label>
+
+<textarea name="problema" rows="4"
+class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500"></textarea>
+</div>
+
+<!-- SISTEMA -->
+<div>
+<label class="text-lg font-semibold block mb-4">
+¿Cómo estás manejando tu marketing hoy?
+</label>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<button type="button" class="btn sistema">No tengo claridad</button>
+<button type="button" class="btn sistema">Hago cosas sueltas</button>
+<button type="button" class="btn sistema">Tengo algo estructurado</button>
+</div>
+
+<input type="hidden" name="estructura" id="estructura">
+</div>
+
+<!-- EMAIL -->
+<div>
+<label class="text-lg font-semibold block mb-3">
+Tu correo
+</label>
+
+<input name="email" required type="email"
+class="w-full p-4 rounded-xl bg-white/5 border border-white/10">
+</div>
+
+<button class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 py-4 rounded-xl font-semibold text-lg hover:scale-[1.02] transition">
+Enviar diagnóstico →
+</button>
+
+</form>
 
 </main>
 
+<!-- RESULTADO PRO -->
+<div id="resultado" class="hidden flex items-center justify-center min-h-screen">
+
+<div class="text-center max-w-lg mx-auto px-6">
+
+<div class="mb-6">
+<div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center text-2xl">
+✔
+</div>
+</div>
+
+<h2 class="text-3xl font-bold mb-4">
+Diagnóstico recibido
+</h2>
+
+<p class="text-gray-400 mb-8 leading-relaxed">
+Revisaremos tu caso y evaluaremos si realmente podemos ayudarte a estructurar tu crecimiento.
+<br><br>
+Si tu negocio aplica, el siguiente paso es una sesión estratégica.
+</p>
+
+<a href="https://calendly.com/raizhubdigital/30min"
+target="_blank"
+class="block w-full mb-4 bg-gradient-to-r from-purple-600 to-indigo-600 py-4 rounded-xl font-semibold text-lg hover:scale-[1.02] transition shadow-lg">
+Agendar sesión →
+</a>
+
+<a href="index.html"
+class="text-gray-500 hover:text-white transition text-sm">
+Volver al inicio
+</a>
+
+</div>
+
+</div>
+
 <script>
-(function(){
-  emailjs.init("SenRAhyy-pRrsu5K-");
-})();
+emailjs.init("SenRAhyy-pRrsu5K-");
 
-// estilos base botones
-function setupButtons(selector, inputId){
-  const buttons = document.querySelectorAll(selector);
-  const input = document.getElementById(inputId);
+// BOTONES
+function setup(selector, inputId){
+const buttons = document.querySelectorAll(selector);
+const input = document.getElementById(inputId);
 
-  buttons.forEach(btn => {
-    btn.className += " w-full text-left p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500 hover:bg-white/10 transition text-gray-300";
+buttons.forEach(btn => {
+btn.className += " w-full p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500 transition text-left";
 
-    btn.addEventListener("click", () => {
-      buttons.forEach(b => b.classList.remove("bg-purple-600", "text-white"));
-      btn.classList.add("bg-purple-600", "text-white");
-      input.value = btn.innerText;
-    });
-  });
+btn.onclick = () => {
+buttons.forEach(b => b.classList.remove("bg-purple-600","text-white"));
+btn.classList.add("bg-purple-600","text-white");
+input.value = btn.innerText;
+};
+});
 }
 
-setupButtons(".option-btn", "objetivo");
-setupButtons(".inversion-btn", "inversion");
-setupButtons(".sistema-btn", "estructura");
+setup(".momento","momento");
+setup(".objetivo","objetivo");
+setup(".clientes","clientes");
+setup(".inversion","inversion");
+setup(".sistema","estructura");
 
-// submit
+// SUBMIT
 const form = document.getElementById("form");
 const resultado = document.getElementById("resultado");
 
 form.addEventListener("submit", function(e){
-  e.preventDefault();
+e.preventDefault();
 
-  if(!document.getElementById("objetivo").value ||
-     !document.getElementById("inversion").value ||
-     !document.getElementById("estructura").value){
-    alert("Completa todas las selecciones");
-    return;
-  }
+document.querySelector("main").style.display = "none";
+resultado.classList.remove("hidden");
 
-  emailjs.sendForm("service_dmwl5ok", "template_dpfmufi", this)
-    .then(() => {
-      form.style.display = "none";
-      resultado.classList.remove("hidden");
-    }, (error) => {
-      alert("Error enviando");
-      console.log(error);
-    });
+emailjs.sendForm("service_dmwl5ok","template_dpfmufi",this);
 });
 </script>
 
