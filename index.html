@@ -4,45 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO BASE -->
   <title>Raíz Hub Digital | Sistema de crecimiento digital</title>
   <meta name="description" content="Consultoría de sistemas de crecimiento digital. Diseñamos estructuras de captación, conversión y medición para negocios que buscan crecer con claridad y criterio.">
 
-  <!-- OPEN GRAPH -->
-  <meta property="og:title" content="Raíz Hub Digital">
-  <meta property="og:description" content="Convierte tu marketing en un sistema de crecimiento real.">
-  <meta property="og:type" content="website">
+  <link rel="icon" href="Images/logo_raizhub_silliconvalleystyle.svg">
 
-  <!-- FAVICON (opcional) -->
-  <link rel="icon" href="Images/logo.webp">
-
-  <!-- TAILWIND -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .card-system {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .card-system:hover {
+      transform: translateY(-6px) scale(1.02);
+      border-color: rgba(124,58,237,0.6);
+      box-shadow: 0 0 30px rgba(124,58,237,0.25);
+    }
+
+    .card-system:hover img {
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 10px #7C3AED);
+    }
+
+    .card-system img {
+      transition: all 0.3s ease;
+    }
+  </style>
 </head>
 
 <body class="bg-black text-white scroll-smooth">
 
-<!-- BACKGROUND -->
-<div class="fixed inset-0 -z-10">
-  <div class="absolute inset-0 bg-black"></div>
-  <div class="absolute inset-0 opacity-20"
-    style="background-image: radial-gradient(circle at 20% 20%, #7c3aed, transparent 40%),
-                           radial-gradient(circle at 80% 80%, #2563eb, transparent 40%);">
-  </div>
+<!-- BACKGROUND VIDEO -->
+<div class="fixed inset-0 -z-10 overflow-hidden">
+
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-30">
+    <source src="Images/network-system-raizhub-bg.webm" type="video/webm">
+  </video>
+
+  <div class="absolute inset-0 bg-black/70"></div>
+
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-black to-indigo-900/30"></div>
+
 </div>
 
 <!-- HEADER -->
 <header class="fixed w-full top-0 bg-black/60 backdrop-blur border-b border-gray-800 z-50">
   <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
 
-    <div class="flex items-center gap-2">
-      <img src="Images/logo.webp"
-           alt="Logo de Raíz Hub Digital, consultoría de sistemas de crecimiento digital"
-           class="w-8">
+    <div class="flex items-center gap-3">
+      <img src="Images/logo_raizhub_silliconvalleystyle.svg" class="w-8">
       <span class="font-semibold tracking-wide">Raíz Hub Digital</span>
     </div>
 
-    <a href="https://wa.me/573006177055?text=Hola%20quiero%20un%20diagnóstico%20estratégico"
+    <a href="https://wa.me/573006177055"
        class="text-sm px-4 py-2 border border-purple-500 rounded-lg hover:bg-purple-500/20 transition">
       Contactar →
     </a>
@@ -58,16 +76,16 @@
 
   <div class="max-w-4xl">
 
-    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6 tracking-tight">
       Sistema de crecimiento digital para negocios que quieren dejar de improvisar
     </h1>
 
-    <p class="text-lg text-gray-400 mb-10">
+    <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
       Diseñamos estructuras de captación, conversión y medición que convierten el marketing en decisiones y crecimiento real.
     </p>
 
-    <a href="https://wa.me/573006177055?text=Hola%20quiero%20un%20diagnóstico%20estratégico"
-       class="inline-block bg-gradient-to-r from-purple-600 to-indigo-600 px-8 py-4 rounded-xl font-semibold text-lg hover:scale-105 transition shadow-lg">
+    <a href="https://wa.me/573006177055"
+       class="inline-block bg-gradient-to-r from-purple-600 via-indigo-500 to-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:scale-[1.03] hover:shadow-2xl transition">
       Agendar diagnóstico estratégico →
     </a>
 
@@ -110,54 +128,46 @@
 </section>
 
 <!-- SISTEMA -->
-<section class="py-24 px-6">
+<section class="py-24 px-6 relative">
 
   <h2 class="text-3xl font-bold text-center mb-16">
     Cómo funciona el sistema de crecimiento digital
   </h2>
 
-  <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+  <!-- línea -->
+  <div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-purple-600 via-indigo-500 to-blue-600 opacity-30"></div>
 
-    <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+  <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto relative z-10">
+
+    <!-- 1 -->
+    <div class="card-system p-6 rounded-xl text-center">
+      <img src="Images/target.svg" class="w-10 mx-auto mb-4 opacity-80">
       <h3 class="font-semibold mb-2">Claridad del negocio</h3>
       <p class="text-gray-400 text-sm">Definimos objetivos reales y eliminamos lo innecesario.</p>
     </div>
 
-    <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+    <!-- 2 -->
+    <div class="card-system p-6 rounded-xl text-center">
+      <img src="Images/layers.svg" class="w-10 mx-auto mb-4 opacity-80">
       <h3 class="font-semibold mb-2">Diseño del sistema</h3>
       <p class="text-gray-400 text-sm">Estructuramos captación, conversión y flujo.</p>
     </div>
 
-    <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+    <!-- 3 -->
+    <div class="card-system p-6 rounded-xl text-center">
+      <img src="Images/chart.svg" class="w-10 mx-auto mb-4 opacity-80">
       <h3 class="font-semibold mb-2">Medición accionable</h3>
       <p class="text-gray-400 text-sm">Transformamos datos en decisiones.</p>
     </div>
 
-    <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+    <!-- 4 -->
+    <div class="card-system p-6 rounded-xl text-center">
+      <img src="Images/rocket.svg" class="w-10 mx-auto mb-4 opacity-80">
       <h3 class="font-semibold mb-2">Optimización continua</h3>
       <p class="text-gray-400 text-sm">Ajustamos y escalamos con criterio.</p>
     </div>
 
   </div>
-
-</section>
-
-<!-- FILTRO -->
-<section class="py-24 px-6 text-center max-w-3xl mx-auto">
-
-  <h2 class="text-3xl font-bold mb-6">
-    No trabajamos con todos los negocios
-  </h2>
-
-  <p class="text-gray-400 mb-6">
-    Este enfoque no es para quienes buscan soluciones rápidas o ejecución sin estrategia.
-  </p>
-
-  <ul class="text-gray-400 space-y-2">
-    <li>Negocios sin claridad de objetivos</li>
-    <li>Empresas enfocadas solo en redes sociales</li>
-    <li>Proyectos sin intención de tomar decisiones estratégicas</li>
-  </ul>
 
 </section>
 
@@ -170,11 +180,10 @@
 
   <p class="text-gray-400 mb-10 max-w-xl mx-auto">
     Antes de agendar una sesión, necesitamos entender tu contexto.
-    Inicia el diagnóstico estratégico y evaluamos si tiene sentido trabajar juntos.
   </p>
 
   <a href="/diagnostico.html"
-     class="inline-block bg-gradient-to-r from-purple-600 to-indigo-600 px-8 py-4 rounded-xl font-semibold text-lg hover:scale-105 transition shadow-lg">
+     class="inline-block bg-gradient-to-r from-purple-600 via-indigo-500 to-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:scale-[1.03] transition shadow-lg">
     Iniciar diagnóstico →
   </a>
 
@@ -184,7 +193,7 @@
 
 <!-- FOOTER -->
 <footer class="text-center py-10 text-gray-500 text-sm border-t border-gray-800">
-  © 2026 Raíz Hub Digital — Consultoría de sistemas de crecimiento digital
+  © 2026 Raíz Hub Digital — Consultoría estratégica de crecimiento digital
 </footer>
 
 <!-- WHATSAPP -->
@@ -192,7 +201,6 @@
    class="fixed bottom-6 right-6 z-50">
 
   <img src="Images/whatsapp-icon.svg"
-       alt="Botón de contacto por WhatsApp para diagnóstico estratégico"
        class="w-12 hover:scale-110 transition drop-shadow-lg">
 
 </a>
