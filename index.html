@@ -32,6 +32,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+  <!-- Google Consent Mode -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+
   <!-- Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -106,6 +119,17 @@
     .demo-tile {
       background: rgba(255,255,255,0.07);
       border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .cookie-banner {
+      background: rgba(5,5,5,0.92);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+    }
+
+    .cookie-banner.is-hidden {
+      display: none;
     }
 
     .logo-slider {
@@ -530,13 +554,77 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- FOOTER -->
 <footer class="text-center py-10 text-gray-500 text-sm border-t border-gray-800">
   © 2026 Raíz Hub Digital — Consultoría estratégica de crecimiento digital
+  <br>
+  <a href="politica-de-privacidad.html" class="hover:text-white transition">Política de privacidad</a>
 </footer>
+
+<!-- COOKIES -->
+<div id="cookie-banner" class="cookie-banner fixed left-4 right-4 bottom-4 z-[60] max-w-4xl mx-auto rounded-2xl p-5 is-hidden">
+  <div class="flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+    <div>
+      <h2 class="font-semibold mb-2">Usamos cookies para mejorar la medición</h2>
+      <p class="text-sm text-gray-400 leading-relaxed">
+        Usamos cookies y herramientas como Google Tag Manager para entender el rendimiento del sitio y mejorar la experiencia. Puedes aceptar o rechazar estas mediciones no esenciales.
+        <a href="politica-de-privacidad.html" class="text-purple-300 hover:text-white transition">Ver política de privacidad</a>.
+      </p>
+    </div>
+
+    <div class="flex gap-3 shrink-0">
+      <button id="cookie-reject" type="button" class="px-4 py-3 rounded-xl border border-white/10 text-sm font-semibold hover:border-purple-500 transition">
+        Rechazar
+      </button>
+      <button id="cookie-accept" type="button" class="px-4 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 text-sm font-semibold hover:scale-[1.03] transition">
+        Aceptar
+      </button>
+    </div>
+  </div>
+</div>
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/573006177055"
    class="fixed bottom-6 right-6 z-50">
   <img src="Images/whatsapp-icon.svg" alt="WhatsApp" class="w-12 hover:scale-110 transition drop-shadow-lg">
 </a>
+
+<script>
+  (function(){
+    const storageKey = "raizhub_cookie_consent";
+    const banner = document.getElementById("cookie-banner");
+    const accept = document.getElementById("cookie-accept");
+    const reject = document.getElementById("cookie-reject");
+
+    function updateConsent(granted){
+      gtag("consent", "update", {
+        "ad_storage": granted ? "granted" : "denied",
+        "analytics_storage": granted ? "granted" : "denied",
+        "ad_user_data": granted ? "granted" : "denied",
+        "ad_personalization": granted ? "granted" : "denied"
+      });
+    }
+
+    const savedConsent = localStorage.getItem(storageKey);
+
+    if (savedConsent === "accepted") {
+      updateConsent(true);
+    } else if (savedConsent === "rejected") {
+      updateConsent(false);
+    } else {
+      banner.classList.remove("is-hidden");
+    }
+
+    accept.addEventListener("click", () => {
+      localStorage.setItem(storageKey, "accepted");
+      updateConsent(true);
+      banner.classList.add("is-hidden");
+    });
+
+    reject.addEventListener("click", () => {
+      localStorage.setItem(storageKey, "rejected");
+      updateConsent(false);
+      banner.classList.add("is-hidden");
+    });
+  })();
+</script>
 
 </body>
 </html>

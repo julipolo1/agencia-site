@@ -35,6 +35,19 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
 
+<!-- Google Consent Mode -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'analytics_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'wait_for_update': 500
+});
+</script>
+
 <!-- Google Tag Manager -->
 <script>
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -103,6 +116,17 @@ body {
 .question-block:hover label,
 .question-block:focus-within label {
   color: #ffffff;
+}
+
+.cookie-banner {
+  background: rgba(5,5,5,0.92);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+}
+
+.cookie-banner.is-hidden {
+  display: none;
 }
 </style>
 
@@ -356,6 +380,11 @@ class="w-full p-4 rounded-xl bg-white/5 border border-white/10">
 Enviar diagnóstico →
 </button>
 
+<p class="text-xs text-gray-500 text-center leading-relaxed">
+Al enviar este formulario aceptas el tratamiento de tus datos conforme a nuestra
+<a href="politica-de-privacidad.html" class="text-purple-300 hover:text-white transition">política de privacidad</a>.
+</p>
+
 </form>
 
 </main>
@@ -396,10 +425,70 @@ Volver al inicio
 
 </div>
 
+<!-- COOKIES -->
+<div id="cookie-banner" class="cookie-banner fixed left-4 right-4 bottom-4 z-[60] max-w-4xl mx-auto rounded-2xl p-5 is-hidden">
+  <div class="flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+    <div>
+      <h2 class="font-semibold mb-2">Usamos cookies para mejorar la medición</h2>
+      <p class="text-sm text-gray-400 leading-relaxed">
+        Usamos cookies y herramientas como Google Tag Manager para entender el rendimiento del sitio y mejorar la experiencia. Puedes aceptar o rechazar estas mediciones no esenciales.
+        <a href="politica-de-privacidad.html" class="text-purple-300 hover:text-white transition">Ver política de privacidad</a>.
+      </p>
+    </div>
+
+    <div class="flex gap-3 shrink-0">
+      <button id="cookie-reject" type="button" class="px-4 py-3 rounded-xl border border-white/10 text-sm font-semibold hover:border-purple-500 transition">
+        Rechazar
+      </button>
+      <button id="cookie-accept" type="button" class="px-4 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 text-sm font-semibold hover:scale-[1.03] transition">
+        Aceptar
+      </button>
+    </div>
+  </div>
+</div>
+
 <script>
 const EMAILJS_PUBLIC_KEY = "SenRAhyy-pRrsu5K-";
 const EMAILJS_SERVICE_ID = "service_dmwl5ok";
 const EMAILJS_TEMPLATE_ID = "template_dpfmufi";
+
+(function(){
+const storageKey = "raizhub_cookie_consent";
+const banner = document.getElementById("cookie-banner");
+const accept = document.getElementById("cookie-accept");
+const reject = document.getElementById("cookie-reject");
+
+function updateConsent(granted){
+gtag("consent", "update", {
+"ad_storage": granted ? "granted" : "denied",
+"analytics_storage": granted ? "granted" : "denied",
+"ad_user_data": granted ? "granted" : "denied",
+"ad_personalization": granted ? "granted" : "denied"
+});
+}
+
+const savedConsent = localStorage.getItem(storageKey);
+
+if (savedConsent === "accepted") {
+updateConsent(true);
+} else if (savedConsent === "rejected") {
+updateConsent(false);
+} else {
+banner.classList.remove("is-hidden");
+}
+
+accept.addEventListener("click", () => {
+localStorage.setItem(storageKey, "accepted");
+updateConsent(true);
+banner.classList.add("is-hidden");
+});
+
+reject.addEventListener("click", () => {
+localStorage.setItem(storageKey, "rejected");
+updateConsent(false);
+banner.classList.add("is-hidden");
+});
+})();
 
 window.addEventListener("DOMContentLoaded", () => {
 emailjs.init(EMAILJS_PUBLIC_KEY);
