@@ -5,25 +5,114 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Diagnóstico Estratégico | Raíz Hub Digital</title>
+<meta name="description" content="Diagnóstico estratégico para entender el estado actual de tu negocio y evaluar qué sistema de crecimiento digital necesitas.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Raíz Hub Digital">
+<meta name="theme-color" content="#000000">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Diagnóstico Estratégico | Raíz Hub Digital">
+<meta property="og:description" content="Diagnóstico estratégico para entender el estado actual de tu negocio y evaluar qué sistema de crecimiento digital necesitas.">
+<meta property="og:image" content="Images/logo.webp">
+<meta property="og:locale" content="es_CO">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Diagnóstico Estratégico | Raíz Hub Digital">
+<meta name="twitter:description" content="Diagnóstico estratégico para entender el estado actual de tu negocio y evaluar qué sistema de crecimiento digital necesitas.">
+<meta name="twitter:image" content="Images/logo.webp">
+
+<link rel="icon" href="Images/logo_raizhub_silliconvalleystyle.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="preload" href="Images/network-system-raizhub-bg.webm" as="video" type="video/webm">
+
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
+
+<style>
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: rgb(255 255 255 / 0.05);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  text-align: left;
+  transition: border-color 150ms ease, background-color 150ms ease, color 150ms ease;
+}
+
+.btn:hover {
+  border-color: #a855f7;
+}
+
+.btn.is-selected {
+  background: #9333ea;
+  color: #ffffff;
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Diagnóstico Estratégico | Raíz Hub Digital",
+  "description": "Diagnóstico estratégico para entender el estado actual de tu negocio y evaluar qué sistema de crecimiento digital necesitas.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Raíz Hub Digital",
+    "url": "./"
+  }
+}
+</script>
 
 </head>
 
 <body class="bg-black text-white">
 
 <!-- BACKGROUND -->
-<div class="fixed inset-0 -z-10">
-  <div class="absolute inset-0 bg-black"></div>
-  <div class="absolute inset-0 opacity-20"
-    style="background-image: radial-gradient(circle at 20% 20%, #7c3aed, transparent 40%),
-                           radial-gradient(circle at 80% 80%, #2563eb, transparent 40%);">
-  </div>
+<div class="fixed inset-0 -z-10 overflow-hidden">
+
+  <video autoplay muted loop playsinline preload="auto" aria-hidden="true"
+    class="absolute inset-0 w-full h-full object-cover opacity-45">
+
+    <source src="Images/network-system-raizhub-bg.webm" type="video/webm">
+    <source src="Images/network-system-raizhub-bg.mp4" type="video/mp4">
+
+  </video>
+
+  <div class="absolute inset-0 bg-black/55"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black"></div>
+
 </div>
 
+<!-- HEADER -->
+<header class="fixed w-full top-0 bg-black/60 backdrop-blur border-b border-gray-800 z-50">
+  <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+
+    <a href="index.html" class="flex items-center gap-3" aria-label="Volver a Raíz Hub Digital">
+      <img src="Images/logo_raizhub_silliconvalleystyle.svg" class="w-8" alt="Logo Raíz Hub Digital" fetchpriority="high">
+      <span class="font-semibold tracking-wide">Raíz Hub Digital</span>
+    </a>
+
+    <a href="https://wa.me/573006177055"
+       class="text-sm px-4 py-2 border border-purple-500 rounded-lg hover:bg-purple-500/20 transition">
+      Contactar →
+    </a>
+
+  </div>
+</header>
+
 <!-- FORM -->
-<main class="max-w-2xl mx-auto px-6 py-16">
+<main class="max-w-2xl mx-auto px-6 py-32">
 
 <h1 class="text-3xl font-bold text-center mb-2">
 Diagnóstico Estratégico
@@ -167,7 +256,7 @@ Enviar diagnóstico →
 </main>
 
 <!-- RESULTADO PRO -->
-<div id="resultado" class="hidden flex items-center justify-center min-h-screen">
+<div id="resultado" class="hidden flex items-center justify-center min-h-screen pt-24">
 
 <div class="text-center max-w-lg mx-auto px-6">
 
@@ -203,7 +292,12 @@ Volver al inicio
 </div>
 
 <script>
-emailjs.init("SenRAhyy-pRrsu5K-");
+const EMAILJS_PUBLIC_KEY = "SenRAhyy-pRrsu5K-";
+const EMAILJS_SERVICE_ID = "service_dmwl5ok";
+const EMAILJS_TEMPLATE_ID = "template_dpfmufi";
+
+window.addEventListener("DOMContentLoaded", () => {
+emailjs.init(EMAILJS_PUBLIC_KEY);
 
 // BOTONES
 function setup(selector, inputId){
@@ -211,11 +305,9 @@ const buttons = document.querySelectorAll(selector);
 const input = document.getElementById(inputId);
 
 buttons.forEach(btn => {
-btn.className += " w-full p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500 transition text-left";
-
 btn.onclick = () => {
-buttons.forEach(b => b.classList.remove("bg-purple-600","text-white"));
-btn.classList.add("bg-purple-600","text-white");
+buttons.forEach(b => b.classList.remove("is-selected"));
+btn.classList.add("is-selected");
 input.value = btn.innerText;
 };
 });
@@ -230,14 +322,24 @@ setup(".sistema","estructura");
 // SUBMIT
 const form = document.getElementById("form");
 const resultado = document.getElementById("resultado");
+const submitButton = form.querySelector("button[type='submit'], button:not([type])");
 
 form.addEventListener("submit", function(e){
 e.preventDefault();
 
-document.querySelector("main").style.display = "none";
-resultado.classList.remove("hidden");
+submitButton.disabled = true;
+submitButton.classList.add("opacity-70", "cursor-not-allowed");
 
-emailjs.sendForm("service_dmwl5ok","template_dpfmufi",this);
+emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+  .then(() => {
+    document.querySelector("main").style.display = "none";
+    resultado.classList.remove("hidden");
+  })
+  .catch(() => {
+    submitButton.disabled = false;
+    submitButton.classList.remove("opacity-70", "cursor-not-allowed");
+  });
+});
 });
 </script>
 

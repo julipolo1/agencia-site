@@ -6,8 +6,27 @@
 
   <title>Raíz Hub Digital | Sistema de crecimiento digital</title>
   <meta name="description" content="Consultoría de sistemas de crecimiento digital. Diseñamos estructuras de captación, conversión y medición para negocios que buscan crecer con claridad y criterio.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Raíz Hub Digital">
+  <meta name="theme-color" content="#000000">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Raíz Hub Digital | Sistema de crecimiento digital">
+  <meta property="og:description" content="Consultoría de sistemas de crecimiento digital. Diseñamos estructuras de captación, conversión y medición para negocios que buscan crecer con claridad y criterio.">
+  <meta property="og:image" content="Images/logo.webp">
+  <meta property="og:locale" content="es_CO">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Raíz Hub Digital | Sistema de crecimiento digital">
+  <meta name="twitter:description" content="Consultoría de sistemas de crecimiento digital. Diseñamos estructuras de captación, conversión y medición para negocios que buscan crecer con claridad y criterio.">
+  <meta name="twitter:image" content="Images/logo.webp">
 
   <link rel="icon" href="Images/logo_raizhub_silliconvalleystyle.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://www.gstatic.com">
+  <link rel="preload" href="Images/network-system-raizhub-bg.webm" as="video" type="video/webm">
 
   <!-- FONTS -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -44,7 +63,103 @@
       border-color: rgba(124,58,237,0.6);
       box-shadow: 0 0 30px rgba(124,58,237,0.25);
     }
+
+    .trust-badge {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .demo-showcase {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .demo-showcase::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 82% 18%, rgba(124,58,237,0.2), transparent 34%),
+                  radial-gradient(circle at 12% 88%, rgba(37,99,235,0.16), transparent 32%);
+      pointer-events: none;
+    }
+
+    .demo-screen {
+      background: linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+    }
+
+    .demo-tile {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo-slider {
+      mask-image: linear-gradient(90deg, transparent, black 14%, black 86%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 14%, black 86%, transparent);
+    }
+
+    .logo-track {
+      width: max-content;
+      animation: logo-scroll 34s linear infinite;
+    }
+
+    .logo-slider:hover .logo-track {
+      animation-play-state: paused;
+    }
+
+    .client-logo {
+      width: 180px;
+      height: 72px;
+      object-fit: contain;
+      filter: grayscale(1);
+      opacity: 0.62;
+      transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+    }
+
+    .client-logo:hover {
+      filter: grayscale(0);
+      opacity: 1;
+      transform: scale(1.04);
+    }
+
+    @keyframes logo-scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .logo-track {
+        animation: none;
+      }
+    }
   </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Raíz Hub Digital",
+      "description": "Consultoría de sistemas de crecimiento digital. Diseñamos estructuras de captación, conversión y medición para negocios que buscan crecer con claridad y criterio.",
+      "url": "./",
+      "logo": "Images/logo_raizhub_silliconvalleystyle.svg",
+      "sameAs": [
+        "https://wa.me/573006177055",
+        "https://www.google.com/partners/agency?id=4838773300"
+      ],
+      "areaServed": "CO",
+      "serviceType": "Consultoría estratégica de crecimiento digital"
+    }
+  </script>
 </head>
 
 <body class="bg-black text-white scroll-smooth">
@@ -52,11 +167,11 @@
 <!-- BACKGROUND -->
 <div class="fixed inset-0 -z-10 overflow-hidden">
 
-  <video autoplay muted loop playsinline preload="auto"
+  <video autoplay muted loop playsinline preload="auto" aria-hidden="true"
     class="absolute inset-0 w-full h-full object-cover opacity-65">
 
-    <source src="/Images/network-system-raizhub-bg.webm" type="video/webm">
-    <source src="/Images/network-system-raizhub-bg.mp4" type="video/mp4">
+    <source src="Images/network-system-raizhub-bg.webm" type="video/webm">
+    <source src="Images/network-system-raizhub-bg.mp4" type="video/mp4">
 
   </video>
 
@@ -69,10 +184,10 @@
 <header class="fixed w-full top-0 bg-black/60 backdrop-blur border-b border-gray-800 z-50">
   <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
 
-    <div class="flex items-center gap-3">
-      <img src="Images/logo_raizhub_silliconvalleystyle.svg" class="w-8" alt="Logo Raíz Hub Digital">
+    <a href="index.html" class="flex items-center gap-3" aria-label="Raíz Hub Digital">
+      <img src="Images/logo_raizhub_silliconvalleystyle.svg" class="w-8" alt="Logo Raíz Hub Digital" fetchpriority="high">
       <span class="font-semibold tracking-wide">Raíz Hub Digital</span>
-    </div>
+    </a>
 
     <a href="https://wa.me/573006177055"
        class="text-sm px-4 py-2 border border-purple-500 rounded-lg hover:bg-purple-500/20 transition">
@@ -97,7 +212,7 @@
       Diseñamos estructuras de captación, conversión y medición que convierten el marketing en decisiones y crecimiento real.
     </p>
 
-    <a href="/diagnostico.html"
+    <a href="diagnostico.html"
        class="inline-block bg-gradient-to-r from-purple-600 via-indigo-500 to-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:scale-[1.03] hover:shadow-2xl transition">
       Agendar diagnóstico estratégico →
     </a>
@@ -175,6 +290,170 @@
 
 </section>
 
+<!-- CONFIANZA -->
+<section class="py-24 px-6">
+
+  <div class="max-w-6xl mx-auto">
+
+    <div class="flex justify-center mb-16">
+      <div class="w-40 h-[1px] bg-gradient-to-r from-purple-600 via-indigo-500 to-blue-600 opacity-40"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
+
+      <div class="text-center lg:text-left">
+        <div class="mono text-purple-300 text-sm mb-5">
+          CONFIANZA Y CRITERIO
+        </div>
+
+        <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-6">
+          Experiencia respaldada por práctica real
+        </h2>
+
+        <p class="text-gray-400 max-w-xl mx-auto lg:mx-0">
+          Combinamos certificación, estrategia y trabajo aplicado con marcas y proyectos vigentes.
+        </p>
+      </div>
+
+      <div class="trust-badge rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-center gap-8">
+        <div class="text-center sm:text-left">
+          <h3 class="font-semibold text-xl mb-2">Partner de Google</h3>
+          <p class="text-gray-400 text-sm max-w-xs">
+            Perfil oficial de agencia partner para campañas, medición y crecimiento digital.
+          </p>
+        </div>
+
+        <a href="https://www.google.com/partners/agency?id=4838773300"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Ver perfil oficial de Raíz Hub Digital en Google Partners">
+          <img src="https://www.gstatic.com/partners/badge/images/2026/PartnerBadgeClickable.svg"
+               alt="Google Partner"
+               class="w-32 sm:w-36"
+               loading="lazy"
+               decoding="async">
+        </a>
+      </div>
+
+    </div>
+
+    <div class="mt-20">
+      <h3 class="text-center text-sm mono text-gray-400 mb-10">
+        CLIENTES ACTUALES Y PROYECTOS VIGENTES
+      </h3>
+
+      <div class="logo-slider overflow-hidden">
+        <div class="logo-track flex items-center gap-14">
+          <img src="Images/logo_clientes/aavanzar.svg" alt="Aavanzar" class="client-logo" loading="lazy" decoding="async">
+          <img src="Images/logo_clientes/Flowershop colombia.svg" alt="Flowershop Colombia" class="client-logo" loading="lazy" decoding="async">
+          <img src="Images/logo_clientes/Mon_Cherie_Pattiserie.svg" alt="Mon Cherie Pattiserie" class="client-logo" loading="lazy" decoding="async">
+          <img src="Images/logo_clientes/mimascota_logo.svg" alt="mimascota.co" class="client-logo" loading="lazy" decoding="async">
+          <img src="Images/logo_clientes/la_tuerka_producciones.svg" alt="La Tuerka Producciones" class="client-logo" loading="lazy" decoding="async">
+          <img src="Images/logo_clientes/perfiles_y_competencias.png" alt="Perfiles y Competencias" class="client-logo" loading="lazy" decoding="async">
+
+          <img src="Images/logo_clientes/aavanzar.svg" alt="" class="client-logo" loading="lazy" decoding="async" aria-hidden="true">
+          <img src="Images/logo_clientes/Flowershop colombia.svg" alt="" class="client-logo" loading="lazy" decoding="async" aria-hidden="true">
+          <img src="Images/logo_clientes/Mon_Cherie_Pattiserie.svg" alt="" class="client-logo" loading="lazy" decoding="async" aria-hidden="true">
+          <img src="Images/logo_clientes/mimascota_logo.svg" alt="" class="client-logo" loading="lazy" decoding="async" aria-hidden="true">
+          <img src="Images/logo_clientes/la_tuerka_producciones.svg" alt="" class="client-logo" loading="lazy" decoding="async" aria-hidden="true">
+          <img src="Images/logo_clientes/perfiles_y_competencias.png" alt="" class="client-logo" loading="lazy" decoding="async" aria-hidden="true">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- DEMO -->
+<section class="py-24 px-6">
+
+  <div class="max-w-6xl mx-auto">
+
+    <div class="demo-showcase rounded-3xl p-8 md:p-12">
+
+      <div class="relative z-10 grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-center">
+
+        <div>
+          <div class="mono text-purple-300 text-sm mb-5">
+            SISTEMAS DIGITALES A MEDIDA
+          </div>
+
+          <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-6">
+            También convertimos ideas en herramientas funcionales
+          </h2>
+
+          <p class="text-gray-400 mb-8 max-w-xl">
+            Cuando una estrategia necesita algo más que una campaña o una página, podemos prototipar experiencias digitales que ordenan procesos, activan usuarios y muestran valor rápido.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://plataforma-de-actividades.vercel.app/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-block bg-gradient-to-r from-purple-600 via-indigo-500 to-blue-600 px-7 py-4 rounded-xl font-semibold text-center hover:scale-[1.03] transition shadow-lg">
+              Ver demo funcional →
+            </a>
+
+            <a href="diagnostico.html"
+               class="inline-block px-7 py-4 rounded-xl font-semibold text-center border border-white/10 hover:border-purple-500 transition">
+              Evaluar una idea
+            </a>
+          </div>
+        </div>
+
+        <div class="demo-screen rounded-2xl p-5 md:p-6">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <p class="mono text-xs text-purple-300 mb-1">DEMO / RAIZ SCHOOL</p>
+              <h3 class="text-2xl font-bold">Plataforma de actividades</h3>
+            </div>
+
+            <div class="w-3 h-3 rounded-full bg-green-400 shadow-[0_0_18px_rgba(74,222,128,0.8)]"></div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 mb-5">
+            <div class="demo-tile rounded-xl p-4">
+              <span class="text-2xl font-bold">Aa</span>
+              <p class="text-sm text-gray-400 mt-2">Letras</p>
+            </div>
+
+            <div class="demo-tile rounded-xl p-4">
+              <span class="text-2xl font-bold">123</span>
+              <p class="text-sm text-gray-400 mt-2">Números</p>
+            </div>
+
+            <div class="demo-tile rounded-xl p-4">
+              <span class="text-2xl font-bold">◇</span>
+              <p class="text-sm text-gray-400 mt-2">Memoria</p>
+            </div>
+
+            <div class="demo-tile rounded-xl p-4">
+              <span class="text-2xl font-bold">↕</span>
+              <p class="text-sm text-gray-400 mt-2">Arrastrar</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+            <div class="flex items-center justify-between text-sm text-gray-400 mb-3">
+              <span>Prototipo interactivo</span>
+              <span>5 juegos por módulo</span>
+            </div>
+
+            <div class="h-2 rounded-full bg-white/10 overflow-hidden">
+              <div class="h-full w-2/3 bg-gradient-to-r from-purple-600 to-blue-600"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 <!-- SISTEMA -->
 <section class="py-24 px-6 relative">
 
@@ -225,7 +504,7 @@
     Antes de agendar una sesión, necesitamos entender tu contexto.
   </p>
 
-  <a href="/diagnostico.html"
+  <a href="diagnostico.html"
      class="inline-block bg-gradient-to-r from-purple-600 via-indigo-500 to-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:scale-[1.03] transition shadow-lg">
     Iniciar diagnóstico →
   </a>
