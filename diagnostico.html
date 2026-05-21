@@ -58,6 +58,42 @@ body {
   background: #9333ea;
   color: #ffffff;
 }
+
+.question-block {
+  position: relative;
+  padding-top: 2rem;
+  border-top: 1px solid rgb(255 255 255 / 0.08);
+}
+
+.question-block::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #7c3aed, #2563eb);
+  opacity: 0;
+  transition: width 260ms ease, opacity 260ms ease;
+}
+
+.question-block:hover::before,
+.question-block:focus-within::before {
+  width: 100%;
+  opacity: 0.75;
+}
+
+.question-block label,
+.question-block .btn,
+.question-block input,
+.question-block textarea {
+  transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease;
+}
+
+.question-block:hover label,
+.question-block:focus-within label {
+  color: #ffffff;
+}
 </style>
 
 <script type="application/ld+json">
@@ -125,7 +161,7 @@ Cuéntanos sobre tu negocio y te diremos qué necesitas para crecer
 <form id="form" class="space-y-10">
 
 <!-- NOMBRE -->
-<div>
+<div class="question-block">
 <label class="text-lg font-semibold block mb-3">
 ¿Cómo se llama tu negocio?
 </label>
@@ -135,7 +171,7 @@ class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purp
 </div>
 
 <!-- QUÉ HACE -->
-<div>
+<div class="question-block">
 <label class="text-lg font-semibold block mb-3">
 ¿Qué vendes o a qué te dedicas?
 </label>
@@ -146,7 +182,7 @@ class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purp
 </div>
 
 <!-- MOMENTO -->
-<div>
+<div class="question-block">
 <label class="text-lg font-semibold block mb-4">
 ¿En qué momento está tu negocio?
 </label>
@@ -162,7 +198,7 @@ class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purp
 </div>
 
 <!-- OBJETIVO -->
-<div>
+<div class="question-block">
 <label class="text-lg font-semibold block mb-4">
 ¿Qué es lo que más necesitas ahora mismo?
 </label>
@@ -178,7 +214,7 @@ class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purp
 </div>
 
 <!-- CLIENTES -->
-<div>
+<div class="question-block">
 <label class="text-lg font-semibold block mb-4">
 ¿Cómo consigues clientes hoy?
 </label>
@@ -194,8 +230,63 @@ class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purp
 <input type="hidden" name="clientes" id="clientes">
 </div>
 
+<!-- ACTIVOS DIGITALES -->
+<div class="question-block">
+<label class="text-lg font-semibold block mb-4">
+¿Qué activos digitales tienes hoy?
+</label>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<button type="button" class="btn activos">Página web</button>
+<button type="button" class="btn activos">Instagram</button>
+<button type="button" class="btn activos">Facebook</button>
+<button type="button" class="btn activos">TikTok</button>
+<button type="button" class="btn activos">LinkedIn</button>
+<button type="button" class="btn activos">Google Business Profile</button>
+<button type="button" class="btn activos">WhatsApp Business</button>
+<button type="button" class="btn activos">Base de datos / CRM</button>
+<button type="button" class="btn activos activos-empty">No tengo</button>
+<button type="button" class="btn activos">No tengo claro</button>
+</div>
+
+<input type="hidden" name="activos_digitales" id="activos_digitales">
+</div>
+
+<!-- LINKS -->
+<div class="question-block hidden" id="links_activos">
+<label class="text-lg font-semibold block mb-3">
+Si tienes enlaces, compártelos aquí
+</label>
+
+<p class="text-gray-500 text-sm mb-4">
+Opcional. Comparte solo lo que tengas a la mano.
+</p>
+
+<div class="space-y-3">
+<input name="sitio_web" type="text" inputmode="url"
+placeholder="Sitio web"
+class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 outline-none">
+
+<input name="instagram" type="text" inputmode="url"
+placeholder="Perfil de Instagram"
+class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 outline-none">
+
+<input name="linkedin" type="text" inputmode="url"
+placeholder="Perfil de LinkedIn"
+class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 outline-none">
+
+<input name="google_business" type="text" inputmode="url"
+placeholder="Google Business Profile"
+class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 outline-none">
+
+<textarea name="otros_activos" rows="3"
+placeholder="Otros perfiles, herramientas, catálogos, landing pages o activos importantes"
+class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purple-500 outline-none"></textarea>
+</div>
+</div>
+
 <!-- INVERSIÓN -->
-<div>
+<div class="question-block">
 <label class="text-lg font-semibold block mb-4">
 ¿Cuánto inviertes en publicidad al mes?
 </label>
@@ -213,7 +304,7 @@ class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purp
 </div>
 
 <!-- PROBLEMA -->
-<div>
+<div class="question-block">
 <label class="text-lg font-semibold block mb-3">
 ¿Qué sientes que no está funcionando?
 </label>
@@ -223,7 +314,7 @@ class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purp
 </div>
 
 <!-- SISTEMA -->
-<div>
+<div class="question-block">
 <label class="text-lg font-semibold block mb-4">
 ¿Cómo estás manejando tu marketing hoy?
 </label>
@@ -238,7 +329,7 @@ class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purp
 </div>
 
 <!-- EMAIL -->
-<div>
+<div class="question-block">
 <label class="text-lg font-semibold block mb-3">
 Tu correo
 </label>
@@ -313,9 +404,62 @@ input.value = btn.innerText;
 });
 }
 
+function setupMultiple(selector, inputId){
+const buttons = document.querySelectorAll(selector);
+const input = document.getElementById(inputId);
+const selected = new Set();
+const linksBlock = document.getElementById("links_activos");
+const linkFields = linksBlock ? linksBlock.querySelectorAll("input, textarea") : [];
+const exclusiveValues = new Set(["No tengo", "No tengo claro"]);
+
+function updateLinks(){
+const hasLinkableAssets = Array.from(selected).some(value => !exclusiveValues.has(value));
+
+if (!linksBlock) return;
+
+linksBlock.classList.toggle("hidden", !hasLinkableAssets);
+
+if (!hasLinkableAssets) {
+linkFields.forEach(field => {
+field.value = "";
+});
+}
+}
+
+buttons.forEach(btn => {
+btn.onclick = () => {
+const value = btn.innerText;
+
+if (exclusiveValues.has(value)) {
+buttons.forEach(button => button.classList.remove("is-selected"));
+selected.clear();
+selected.add(value);
+btn.classList.add("is-selected");
+} else {
+exclusiveValues.forEach(exclusiveValue => selected.delete(exclusiveValue));
+buttons.forEach(button => {
+if (exclusiveValues.has(button.innerText)) button.classList.remove("is-selected");
+});
+
+if (selected.has(value)) {
+selected.delete(value);
+btn.classList.remove("is-selected");
+} else {
+selected.add(value);
+btn.classList.add("is-selected");
+}
+}
+
+input.value = Array.from(selected).join(", ");
+updateLinks();
+};
+});
+}
+
 setup(".momento","momento");
 setup(".objetivo","objetivo");
 setup(".clientes","clientes");
+setupMultiple(".activos","activos_digitales");
 setup(".inversion","inversion");
 setup(".sistema","estructura");
 
