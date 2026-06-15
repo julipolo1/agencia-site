@@ -24,13 +24,14 @@
   <link rel="icon" href="Images/logo_raizhub_silliconvalleystyle.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
   <link rel="dns-prefetch" href="https://www.gstatic.com">
-  <link rel="preload" href="Images/network-system-raizhub-bg.webm" as="video" type="video/webm">
 
   <!-- FONTS -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@400;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="styles-index.css">
+  <script src="site.js" defer></script>
 
   <!-- Google Consent Mode -->
   <script>
@@ -54,8 +55,6 @@
     })(window,document,'script','dataLayer','GTM-M5W33F75');
   </script>
   <!-- End Google Tag Manager -->
-
-  <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     body {
@@ -132,6 +131,28 @@
       display: none;
     }
 
+    .whatsapp-float {
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .cookie-banner:not(.is-hidden) ~ .whatsapp-float {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(0.5rem);
+    }
+
+    @media (max-width: 767px) {
+      main > section:not(:first-child) {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+
+      .statement-panel {
+        margin-bottom: 4rem;
+        padding: 2.5rem 1.5rem;
+      }
+    }
+
     .logo-slider {
       mask-image: linear-gradient(90deg, transparent, black 14%, black 86%, transparent);
       -webkit-mask-image: linear-gradient(90deg, transparent, black 14%, black 86%, transparent);
@@ -205,11 +226,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- BACKGROUND -->
 <div class="fixed inset-0 -z-10 overflow-hidden">
 
-  <video autoplay muted loop playsinline preload="auto" aria-hidden="true"
+  <video autoplay muted loop playsinline preload="none" aria-hidden="true"
+    poster="Images/network-system-raizhub-poster.jpg"
+    data-background-video
     class="absolute inset-0 w-full h-full object-cover opacity-65">
 
-    <source src="Images/network-system-raizhub-bg.webm" type="video/webm">
-    <source src="Images/network-system-raizhub-bg.mp4" type="video/mp4">
+    <source data-src="Images/network-system-raizhub-bg.webm" type="video/webm">
+    <source data-src="Images/network-system-raizhub-bg.mp4" type="video/mp4">
 
   </video>
 
@@ -223,7 +246,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
 
     <a href="index.html" class="flex items-center gap-3" aria-label="Raíz Hub Digital">
-      <img src="Images/logo_raizhub_silliconvalleystyle.svg" class="w-8" alt="Logo Raíz Hub Digital" fetchpriority="high">
+      <img src="Images/logo_raizhub_silliconvalleystyle.svg" class="w-8" alt="Logo Raíz Hub Digital" width="32" height="32" fetchpriority="high">
       <span class="font-semibold tracking-wide">Raíz Hub Digital</span>
     </a>
 
@@ -265,7 +288,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="max-w-5xl mx-auto text-center">
 
     <!-- STATEMENT -->
-    <div class="relative mb-24 px-10 py-14 rounded-3xl 
+    <div class="statement-panel relative mb-24 px-10 py-14 rounded-3xl
                 border border-white/10 
                 bg-gradient-to-br from-white/5 to-transparent 
                 backdrop-blur-xl
@@ -368,6 +391,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <img src="https://www.gstatic.com/partners/badge/images/2026/PartnerBadgeClickable.svg"
                alt="Google Partner"
                class="w-32 sm:w-36"
+               width="152"
+               height="146"
                loading="lazy"
                decoding="async">
         </a>
@@ -382,19 +407,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="logo-slider overflow-hidden">
         <div class="logo-track flex items-center gap-14">
-          <img src="Images/logo_clientes/aavanzar.svg" alt="Aavanzar" class="client-logo" loading="lazy" decoding="async">
-          <img src="Images/logo_clientes/Flowershop colombia.svg" alt="Flowershop Colombia" class="client-logo" loading="lazy" decoding="async">
-          <img src="Images/logo_clientes/Mon_Cherie_Pattiserie.svg" alt="Mon Cherie Pattiserie" class="client-logo" loading="lazy" decoding="async">
-          <img src="Images/logo_clientes/mimascota_logo.svg" alt="mimascota.co" class="client-logo" loading="lazy" decoding="async">
-          <img src="Images/logo_clientes/la_tuerka_producciones.svg" alt="La Tuerka Producciones" class="client-logo" loading="lazy" decoding="async">
-          <img src="Images/logo_clientes/perfiles_y_competencias.png" alt="Perfiles y Competencias" class="client-logo" loading="lazy" decoding="async">
+          <img src="Images/logo_clientes/aavanzar.svg" alt="Aavanzar" class="client-logo" width="180" height="72" loading="lazy" decoding="async">
+          <img src="Images/logo_clientes/Flowershop colombia.svg" alt="Flowershop Colombia" class="client-logo" width="180" height="72" loading="lazy" decoding="async">
+          <img src="Images/logo_clientes/Mon_Cherie_Pattiserie.svg" alt="Mon Cherie Pattiserie" class="client-logo" width="180" height="72" loading="lazy" decoding="async">
+          <img src="Images/logo_clientes/mimascota_logo.svg" alt="mimascota.co" class="client-logo" width="180" height="72" loading="lazy" decoding="async">
+          <img src="Images/logo_clientes/la_tuerka_producciones.svg" alt="La Tuerka Producciones" class="client-logo" width="180" height="72" loading="lazy" decoding="async">
+          <img src="Images/logo_clientes/perfiles_y_competencias.png" alt="Perfiles y Competencias" class="client-logo" width="180" height="72" loading="lazy" decoding="async">
 
-          <img src="Images/logo_clientes/aavanzar.svg" alt="" class="client-logo" loading="lazy" decoding="async" aria-hidden="true">
-          <img src="Images/logo_clientes/Flowershop colombia.svg" alt="" class="client-logo" loading="lazy" decoding="async" aria-hidden="true">
-          <img src="Images/logo_clientes/Mon_Cherie_Pattiserie.svg" alt="" class="client-logo" loading="lazy" decoding="async" aria-hidden="true">
-          <img src="Images/logo_clientes/mimascota_logo.svg" alt="" class="client-logo" loading="lazy" decoding="async" aria-hidden="true">
-          <img src="Images/logo_clientes/la_tuerka_producciones.svg" alt="" class="client-logo" loading="lazy" decoding="async" aria-hidden="true">
-          <img src="Images/logo_clientes/perfiles_y_competencias.png" alt="" class="client-logo" loading="lazy" decoding="async" aria-hidden="true">
+          <img src="Images/logo_clientes/aavanzar.svg" alt="" class="client-logo" width="180" height="72" loading="lazy" decoding="async" aria-hidden="true">
+          <img src="Images/logo_clientes/Flowershop colombia.svg" alt="" class="client-logo" width="180" height="72" loading="lazy" decoding="async" aria-hidden="true">
+          <img src="Images/logo_clientes/Mon_Cherie_Pattiserie.svg" alt="" class="client-logo" width="180" height="72" loading="lazy" decoding="async" aria-hidden="true">
+          <img src="Images/logo_clientes/mimascota_logo.svg" alt="" class="client-logo" width="180" height="72" loading="lazy" decoding="async" aria-hidden="true">
+          <img src="Images/logo_clientes/la_tuerka_producciones.svg" alt="" class="client-logo" width="180" height="72" loading="lazy" decoding="async" aria-hidden="true">
+          <img src="Images/logo_clientes/perfiles_y_competencias.png" alt="" class="client-logo" width="180" height="72" loading="lazy" decoding="async" aria-hidden="true">
         </div>
       </div>
     </div>
@@ -504,25 +529,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto relative z-10">
 
     <div class="card-system p-6 rounded-xl text-center">
-      <img src="Images/target.svg" alt="Claridad del negocio" class="w-10 mx-auto mb-4 opacity-80">
+      <img src="Images/target.svg" alt="Claridad del negocio" class="w-10 mx-auto mb-4 opacity-80" width="40" height="40" loading="lazy" decoding="async">
       <h3 class="font-semibold mb-2">Claridad del negocio</h3>
       <p class="text-gray-400 text-sm">Definimos objetivos reales y eliminamos lo innecesario.</p>
     </div>
 
     <div class="card-system p-6 rounded-xl text-center">
-      <img src="Images/layers.svg" alt="Diseño del sistema" class="w-10 mx-auto mb-4 opacity-80">
+      <img src="Images/layers.svg" alt="Diseño del sistema" class="w-10 mx-auto mb-4 opacity-80" width="40" height="40" loading="lazy" decoding="async">
       <h3 class="font-semibold mb-2">Diseño del sistema</h3>
       <p class="text-gray-400 text-sm">Estructuramos captación, conversión y flujo.</p>
     </div>
 
     <div class="card-system p-6 rounded-xl text-center">
-      <img src="Images/chart.svg" alt="Medición accionable" class="w-10 mx-auto mb-4 opacity-80">
+      <img src="Images/chart.svg" alt="Medición accionable" class="w-10 mx-auto mb-4 opacity-80" width="40" height="40" loading="lazy" decoding="async">
       <h3 class="font-semibold mb-2">Medición accionable</h3>
       <p class="text-gray-400 text-sm">Transformamos datos en decisiones.</p>
     </div>
 
     <div class="card-system p-6 rounded-xl text-center">
-      <img src="Images/rocket.svg" alt="Optimización continua" class="w-10 mx-auto mb-4 opacity-80">
+      <img src="Images/rocket.svg" alt="Optimización continua" class="w-10 mx-auto mb-4 opacity-80" width="40" height="40" loading="lazy" decoding="async">
       <h3 class="font-semibold mb-2">Optimización continua</h3>
       <p class="text-gray-400 text-sm">Ajustamos y escalamos con criterio.</p>
     </div>
@@ -552,7 +577,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </main>
 
 <!-- FOOTER -->
-<footer class="text-center py-10 text-gray-500 text-sm border-t border-gray-800">
+<footer class="text-center py-10 text-gray-400 text-sm border-t border-gray-800">
   © 2026 Raíz Hub Digital — Consultoría estratégica de crecimiento digital
   <br>
   <a href="politica-de-privacidad.html" class="hover:text-white transition">Política de privacidad</a>
@@ -582,8 +607,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/573006177055"
-   class="fixed bottom-6 right-6 z-50">
-  <img src="Images/whatsapp-icon.svg" alt="WhatsApp" class="w-12 hover:scale-110 transition drop-shadow-lg">
+   class="whatsapp-float fixed bottom-6 right-6 z-50">
+  <img src="Images/whatsapp-icon.svg" alt="WhatsApp" class="w-12 hover:scale-110 transition drop-shadow-lg" width="48" height="48">
 </a>
 
 <script>

@@ -24,15 +24,15 @@
 <link rel="icon" href="Images/logo_raizhub_silliconvalleystyle.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-<link rel="preload" href="Images/network-system-raizhub-bg.webm" as="video" type="video/webm">
 
 <!-- FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Open+Sans:wght@400;600;700&display=swap"></noscript>
 
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="styles-diagnostico.css">
+<script src="site.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
 
 <!-- Google Consent Mode -->
@@ -80,6 +80,11 @@ body {
 .btn.is-selected {
   background: #9333ea;
   color: #ffffff;
+}
+
+.is-submitting {
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 .question-block {
@@ -155,11 +160,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- BACKGROUND -->
 <div class="fixed inset-0 -z-10 overflow-hidden">
 
-  <video autoplay muted loop playsinline preload="auto" aria-hidden="true"
+  <video autoplay muted loop playsinline preload="none" aria-hidden="true"
+    poster="Images/network-system-raizhub-poster.jpg"
+    data-background-video
     class="absolute inset-0 w-full h-full object-cover opacity-45">
 
-    <source src="Images/network-system-raizhub-bg.webm" type="video/webm">
-    <source src="Images/network-system-raizhub-bg.mp4" type="video/mp4">
+    <source data-src="Images/network-system-raizhub-bg.webm" type="video/webm">
+    <source data-src="Images/network-system-raizhub-bg.mp4" type="video/mp4">
 
   </video>
 
@@ -173,7 +180,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
 
     <a href="index.html" class="flex items-center gap-3" aria-label="Volver a Raíz Hub Digital">
-      <img src="Images/logo_raizhub_silliconvalleystyle.svg" class="w-8" alt="Logo Raíz Hub Digital" fetchpriority="high">
+      <img src="Images/logo_raizhub_silliconvalleystyle.svg" class="w-8" alt="Logo Raíz Hub Digital" width="32" height="32" fetchpriority="high">
       <span class="font-semibold tracking-wide">Raíz Hub Digital</span>
     </a>
 
@@ -296,7 +303,7 @@ class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-purp
 Si tienes enlaces, compártelos aquí
 </label>
 
-<p class="text-gray-500 text-sm mb-4">
+<p class="text-gray-400 text-sm mb-4">
 Opcional. Comparte solo lo que tengas a la mano.
 </p>
 
@@ -380,7 +387,7 @@ class="w-full p-4 rounded-xl bg-white/5 border border-white/10">
 Enviar diagnóstico →
 </button>
 
-<p class="text-xs text-gray-500 text-center leading-relaxed">
+<p class="text-xs text-gray-400 text-center leading-relaxed">
 Al enviar este formulario aceptas el tratamiento de tus datos conforme a nuestra
 <a href="politica-de-privacidad.html" class="text-purple-300 hover:text-white transition">política de privacidad</a>.
 </p>
@@ -417,7 +424,7 @@ Agendar sesión →
 </a>
 
 <a href="index.html"
-class="text-gray-500 hover:text-white transition text-sm">
+class="text-gray-400 hover:text-white transition text-sm">
 Volver al inicio
 </a>
 
@@ -575,7 +582,7 @@ form.addEventListener("submit", function(e){
 e.preventDefault();
 
 submitButton.disabled = true;
-submitButton.classList.add("opacity-70", "cursor-not-allowed");
+submitButton.classList.add("is-submitting");
 
 emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
   .then(() => {
@@ -584,7 +591,7 @@ emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
   })
   .catch(() => {
     submitButton.disabled = false;
-    submitButton.classList.remove("opacity-70", "cursor-not-allowed");
+    submitButton.classList.remove("is-submitting");
   });
 });
 });
