@@ -4,7 +4,6 @@
   if (!video) return;
 
   const shouldLoadVideo =
-    window.matchMedia("(min-width: 768px)").matches &&
     window.matchMedia("(prefers-reduced-motion: no-preference)").matches &&
     !navigator.connection?.saveData;
 
